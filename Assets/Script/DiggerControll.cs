@@ -42,8 +42,8 @@ public class DiggerControll : MonoBehaviour
 
     public void Vibrating()
     {
-        float offsetX = Mathf.Sin(Time.time * frequency) * amplitude;
-        float offsetY = Mathf.Cos(Time.time * frequency) * amplitude;
+        float offsetX = Mathf.Sin(Time.time * frequency) * amplitude * efficency;
+        float offsetY = Mathf.Cos(Time.time * frequency) * amplitude * efficency;
         Vector3 vibrationOffset = new Vector3(offsetX, offsetY, 0f);
         DigModel.transform.localPosition = initialLocalPosition + vibrationOffset;
     }

@@ -7,6 +7,7 @@ public class UnexcavedFloorControl : MonoBehaviour
     public static UnexcavedFloorControl unexcavedFloorControl;
 
     public GameObject UnexcavedFloorModle;
+    public GameObject excavedFloor;
     public float defaultHealth;
     public float currentHealth;
 
@@ -15,6 +16,7 @@ public class UnexcavedFloorControl : MonoBehaviour
     public float frequency = 40f;
     private Vector3 initialLocalPosition;
 
+    
     private void Awake()
     {
         unexcavedFloorControl = this;
@@ -29,6 +31,7 @@ public class UnexcavedFloorControl : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
+            Instantiate(excavedFloor,this.gameObject.transform.position,Quaternion.identity);
             Destroy(this.gameObject);
         }
     }
