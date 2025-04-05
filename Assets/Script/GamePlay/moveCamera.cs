@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using UnityEngine;
-
 public class moveCamera : MonoBehaviour
 {
     public float scrollSpeed = 5f; // 控制滚动移动的速度

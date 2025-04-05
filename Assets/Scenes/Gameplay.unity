@@ -898,6 +898,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSceneName: 
+  initialIronCount: 0
+  initialConcreteCount: 0
+  initialPeopleCount: 0
 --- !u!1 &1130131378
 GameObject:
   m_ObjectHideFlags: 0
