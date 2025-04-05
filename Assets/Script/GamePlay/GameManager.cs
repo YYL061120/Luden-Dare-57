@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public string currentSceneName;
-   
+
+    [System.Serializable]
     public class Resource
     {
         public int ironCount;
