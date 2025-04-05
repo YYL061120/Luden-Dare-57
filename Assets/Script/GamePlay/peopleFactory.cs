@@ -1,8 +1,10 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class peopleFactory : MonoBehaviour
 {
     public GameManager manager;
+    public bool canManufacture;
 
     [Header("Occupacy and Health")]
     public int maxOccupacy;
@@ -18,19 +20,28 @@ public class peopleFactory : MonoBehaviour
     private void Start()
     {
         manager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        StartCoroutine(Manufacturing());
     }
     private void Update()
     {
         //Debug.Log("People: "+manager.resource.peopleCount);
-        Manufacturing();
     }
 
-    public void Manufacturing()
+    public IEnumerator Manufacturing()
     {
-        if (currentPeople > 0)
+        int efficiency = 60;
+        while (true)
         {
-
+            if (currentPeople > 0) canManufacture = true;
+            else canManufacture = false;
+            if (canManufacture)
+            {
+                manager.resource.peopleCount++;
+            }
+            float waitingTime = efficiency - manager.resource.peopleCount * 3f; //formula: 60s/人（-3s/人）
+            yield return new WaitForSeconds(waitingTime);
         }
+
     }
 
     public void HealthDeduction()
