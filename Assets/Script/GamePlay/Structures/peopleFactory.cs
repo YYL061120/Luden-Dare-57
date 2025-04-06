@@ -31,6 +31,7 @@ public class peopleFactory : MonoBehaviour
         rend = GetComponent<Renderer>();
         originalColor = rend.material.color;
         StartCoroutine(Manufacturing());
+        currentHealth = maxHealth;
     }
     private void Update()
     {
