@@ -41,7 +41,7 @@ public class ironFactory : MonoBehaviour
             if (canManufacture)
             {
                 int addValue = currentEfficiency + currentPeople; //formula: 5钢/10s（+1钢/10s）
-                manager.resource.ironCount += addValue;
+                manager.currentIronCount += addValue;
             }
             yield return new WaitForSeconds(efficiency);
         }
