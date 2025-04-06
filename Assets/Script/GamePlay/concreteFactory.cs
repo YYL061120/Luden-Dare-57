@@ -27,7 +27,7 @@ public class concreteFactory : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log("Concrete: "+manager.resource.concreteCount);
+        //Debug.Log("Concrete: "+manager.resource.concreteCount);
     }
 
     public IEnumerator Manufacturing()
