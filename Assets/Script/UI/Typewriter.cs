@@ -18,6 +18,8 @@ public class TypeWriterTest : MonoBehaviour
     public AudioSource source;
 
     public int dialogueCount = 0;
+    public int ck1;
+    public int ck2;
     public List<GameObject> dialogues = new List<GameObject>();
 
     void Start()
@@ -31,11 +33,11 @@ public class TypeWriterTest : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && !isTyping)
         {
             ShowNextSentence();
-            if(currentSentenceIndex == 3)
+            if(currentSentenceIndex == ck1)
             {
                 stonehead.SetActive(true);
             }
-            if (currentSentenceIndex == 4)
+            if (currentSentenceIndex == ck2)
             {
                 digger.SetActive(true);
             }
@@ -62,7 +64,7 @@ public class TypeWriterTest : MonoBehaviour
         foreach (char letter in sentence.ToCharArray())
         {
             textMeshPro.text += letter;
-
+            Debug.Log("asd");
             if (typingSound != null && source)
             {
                 source.PlayOneShot(typingSound);
@@ -79,10 +81,6 @@ public class TypeWriterTest : MonoBehaviour
     {
         Debug.Log("index" + dialogueCount);
         dialogues[dialogueCount].SetActive(false);
-        if (dialogueCount == 0)
-        {
-
-        }
         
         dialogueCount++;
         dialogues[dialogueCount].SetActive(true);
