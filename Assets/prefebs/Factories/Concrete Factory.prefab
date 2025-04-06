@@ -121,6 +121,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canManufacture: 0
+  flashDuration: 0.1
+  fadeDuration: 0.35
   maxOccupacy: 0
   currentPeople: 0
   maxHealth: 25
