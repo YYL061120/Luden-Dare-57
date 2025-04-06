@@ -9,8 +9,8 @@ public class peopleFactory : MonoBehaviour
     [Header("Occupacy and Health")]
     public int maxOccupacy;
     public int currentPeople;
-    public int maxHealth;
-    public int currentHealth;
+    public float maxHealth;
+    public float currentHealth;
 
     private void Awake()
     {
@@ -24,6 +24,10 @@ public class peopleFactory : MonoBehaviour
     private void Update()
     {
         //Debug.Log("People: "+manager.resource.peopleCount);
+        if (currentHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public IEnumerator Manufacturing()

@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 6629254912533279970}
   m_Layer: 7
   m_Name: Iron Factory
-  m_TagString: Untagged
+  m_TagString: Facilities
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -213,8 +213,8 @@ MonoBehaviour:
   canManufacture: 0
   maxOccupacy: 0
   currentPeople: 0
-  maxHealth: 0
-  currentHealth: 0
+  maxHealth: 25
+  currentHealth: 25
   currentEfficiency: 5
 --- !u!1 &1190046903710384283
 GameObject:
