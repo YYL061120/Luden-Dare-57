@@ -249,6 +249,53 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53b61785f75c000418ce0b3c6840eb83, type: 3}
+--- !u!1 &362349540
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 362349542}
+  - component: {fileID: 362349541}
+  m_Layer: 0
+  m_Name: UnexcavedFloorGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &362349541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362349540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccfc268d6c974b04581f5ec7f93ab5c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UnexcavedFloors: {fileID: 0}
+  theList: []
+  TheYAxis: 0
+--- !u!4 &362349542
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362349540}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.26, y: 2, z: 0.99}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &371285369
 GameObject:
   m_ObjectHideFlags: 0
@@ -936,7 +983,6 @@ GameObject:
   - component: {fileID: 1692045211}
   - component: {fileID: 1692045210}
   - component: {fileID: 1692045209}
-  - component: {fileID: 1692045213}
   m_Layer: 0
   m_Name: Cube (4)
   m_TagString: Untagged
@@ -1032,24 +1078,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1692045213
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1692045208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 873b80ac3749e0f468f5b14b21d40552, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canManufacture: 0
-  maxOccupacy: 0
-  currentPeople: 0
-  maxHealth: 0
-  currentHealth: 0
-  currentEfficiency: 5
 --- !u!1 &1696258876
 GameObject:
   m_ObjectHideFlags: 0
@@ -1080,6 +1108,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94f07ae054aa06a4da40a296cd901289, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  facilitiesList: []
+  damage: 0
+  movingSpeed: 0
+  eatingFrequency: 5
+  isMovingState: 1
+  isDealingDamage: 0
 --- !u!4 &1696258878
 Transform:
   m_ObjectHideFlags: 0
@@ -1332,7 +1366,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d41ab26f09052374fada0477ad01a0bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentInteractingBlock: {fileID: 0}
   amountofBoost: 1.2
   interactionMode: 0
   HumanRoom: {fileID: 3532765311178927575, guid: f46f4cc20d1edb649a1864cb0e88f954, type: 3}
@@ -1905,3 +1938,4 @@ SceneRoots:
   - {fileID: 1820861291}
   - {fileID: 1211471995}
   - {fileID: 1696258878}
+  - {fileID: 362349542}
