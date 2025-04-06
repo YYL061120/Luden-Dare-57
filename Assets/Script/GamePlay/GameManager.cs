@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager gameManager;
 
+    private bool isCounting = false;
+    [Header("Time")]
+    public float playingDuration = 0;
 
     public string currentSceneName;
 
@@ -32,12 +35,34 @@ public class GameManager : MonoBehaviour
         currentIronCount = initialIronCount;
         currentConcreteCount = initialConcreteCount;
         currentPeopleCount = initialPeopleCount;
+
+        StartCounting();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        IsCounting();
+    }
+
+    public void StartCounting()
+    {
+        playingDuration = 0;
+        isCounting = true;
+    }
+    
+    public void IsCounting()
+    {
+        if (isCounting)
+        {
+            playingDuration += Time.deltaTime;
+        }
+    }
+    
+    public float EndCounting()
+    {
+        isCounting = false;
+        return playingDuration;
     }
 
 

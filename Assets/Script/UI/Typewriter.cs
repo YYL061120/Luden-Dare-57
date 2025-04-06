@@ -12,6 +12,7 @@ public class TypeWriterTest : MonoBehaviour
     public AudioClip typingSound;
     public AudioSource source;
 
+
     void Start()
     {
         textMeshPro = GetComponent<TextMeshProUGUI>();

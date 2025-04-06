@@ -1,7 +1,8 @@
-﻿using System.Collections;
+﻿using NUnit.Framework.Internal;
+using System.Collections;
 using UnityEngine;
 
-public class concreteFactory : MonoBehaviour
+public class ironFactory : MonoBehaviour
 {
     public GameManager manager;
     public bool canManufacture = false;
@@ -9,8 +10,8 @@ public class concreteFactory : MonoBehaviour
     [Header("Occupacy and Health")]
     public int maxOccupacy;
     public int currentPeople;
-    public int maxHealth;
-    public int currentHealth;
+    public float maxHealth;
+    public float currentHealth;
 
     [Header("Efficiency")]
     public int currentEfficiency = 5;
@@ -27,20 +28,24 @@ public class concreteFactory : MonoBehaviour
     }
     private void Update()
     {
-        //Debug.Log("Concrete: "+manager.currentConcreteCount);
+        //Debug.Log("Iron: " + manager.resource.ironCount);
+        if (currentHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public IEnumerator Manufacturing()
     {
-        int efficiency = 20;
+        int efficiency = 10;
         while (true)
         {
             if (currentPeople > 0) canManufacture = true;
             else canManufacture = false;
             if (canManufacture)
             {
-                int addValue = currentEfficiency + currentPeople; //5材料/20s（+1材料/20s）
-                manager.currentConcreteCount += addValue;
+                int addValue = currentEfficiency + currentPeople; //formula: 5钢/10s（+1钢/10s）
+                manager.currentIronCount += addValue;
             }
             yield return new WaitForSeconds(efficiency);
         }
@@ -50,7 +55,7 @@ public class concreteFactory : MonoBehaviour
     {
         if (true)
         {
-
+            
         }
     }
 }

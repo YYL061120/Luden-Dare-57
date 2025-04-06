@@ -8,6 +8,8 @@ TagManager:
   - UnUsedFloor
   - TheDrill
   - Incarnation
+  - StoneFace
+  - Facilities
   layers:
   - Default
   - TransparentFX
@@ -17,7 +19,7 @@ TagManager:
   - UI
   - UnExcavedFloor
   - ExcavedFloor
-  - 
+  - StoneFace
   - 
   - 
   - 

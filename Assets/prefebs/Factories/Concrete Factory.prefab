@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5490514031188459402}
   m_Layer: 0
   m_Name: Concrete Factory
-  m_TagString: Untagged
+  m_TagString: Facilities
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,6 +124,6 @@ MonoBehaviour:
   canManufacture: 0
   maxOccupacy: 0
   currentPeople: 0
-  maxHealth: 0
-  currentHealth: 0
+  maxHealth: 25
+  currentHealth: 25
   currentEfficiency: 5
