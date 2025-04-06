@@ -8,6 +8,7 @@ TagManager:
   - UnUsedFloor
   - TheDrill
   - Incarnation
+  - Room
   layers:
   - Default
   - TransparentFX

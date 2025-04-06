@@ -16,7 +16,7 @@ public class UnexcavedFloorControl : MonoBehaviour
     public float frequency = 40f;
     private Vector3 initialLocalPosition;
 
-    
+    public healthBar healthBar;
     private void Awake()
     {
         unexcavedFloorControl = this;
@@ -24,6 +24,12 @@ public class UnexcavedFloorControl : MonoBehaviour
     void Start()
     {
         currentHealth = defaultHealth;
+        if (healthBar != null)
+        {
+            healthBar.SetMaxHealth(defaultHealth);
+            healthBar.gameObject.SetActive(currentHealth!=defaultHealth);
+        }
+       
     }
 
     // Update is called once per frame
@@ -33,6 +39,11 @@ public class UnexcavedFloorControl : MonoBehaviour
         {
             Instantiate(excavedFloor,this.gameObject.transform.position,Quaternion.identity);
             Destroy(this.gameObject);
+        }
+        if (healthBar != null)
+        {
+            healthBar.gameObject.SetActive(currentHealth != defaultHealth);
+            healthBar.SetHealth(currentHealth);
         }
     }
 

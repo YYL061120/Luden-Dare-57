@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class peopleFactory : MonoBehaviour
 {
-    public GameManager manager;
     public bool canManufacture;
     public GameObject peopleProduced;
 
@@ -20,7 +19,6 @@ public class peopleFactory : MonoBehaviour
 
     private void Start()
     {
-        manager = GameObject.Find("GameManager").GetComponent<GameManager>();
         StartCoroutine(Manufacturing());
     }
     private void Update()
@@ -37,7 +35,7 @@ public class peopleFactory : MonoBehaviour
             else canManufacture = false;
             if (canManufacture)
             {
-                manager.currentPeopleCount++;
+                GameManager.gameManager.currentPeopleCount++;
                 PeoplePopOutEffect();   
             }
             float waitingTime = efficiency - currentPeople * 3f; //formula: 60s/人（-3s/人）

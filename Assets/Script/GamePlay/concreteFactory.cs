@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class concreteFactory : MonoBehaviour
 {
-    public GameManager manager;
     public bool canManufacture = false;
 
     [Header("Occupacy and Health")]
@@ -22,7 +21,6 @@ public class concreteFactory : MonoBehaviour
 
     private void Start()
     {
-        manager = GameObject.Find("GameManager").GetComponent<GameManager>();
         StartCoroutine(Manufacturing());
     }
     private void Update()
@@ -40,7 +38,7 @@ public class concreteFactory : MonoBehaviour
             if (canManufacture)
             {
                 int addValue = currentEfficiency + currentPeople; //5材料/20s（+1材料/20s）
-                manager.currentConcreteCount += addValue;
+                GameManager.gameManager.currentConcreteCount += addValue;
             }
             yield return new WaitForSeconds(efficiency);
         }
