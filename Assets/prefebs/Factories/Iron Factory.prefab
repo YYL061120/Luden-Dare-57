@@ -210,6 +210,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 873b80ac3749e0f468f5b14b21d40552, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitEffectPrefab: {fileID: 23150035726137254, guid: 0881f4a613aace04e82d022145424cca, type: 3}
+  destroyEffectPrefab: {fileID: 8211956793553979857, guid: 3e3e14a2c28b71f4f8f7f5d28389370b, type: 3}
   canManufacture: 0
   flashDuration: 0.1
   fadeDuration: 0.35

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class concreteFactory : MonoBehaviour
 {
+    public GameObject hitEffectPrefab;
+    public GameObject destroyEffectPrefab;
     public bool canManufacture = false;
 
     public float flashDuration = 0.5f;
@@ -37,6 +39,7 @@ public class concreteFactory : MonoBehaviour
         //Debug.Log("Concrete: "+manager.currentConcreteCount);
         if (currentHealth <= 0)
         {
+            Instantiate(destroyEffectPrefab, transform.position, Quaternion.Euler(-90, 0, 0));
             Destroy(gameObject);
         }
     }
@@ -60,6 +63,8 @@ public class concreteFactory : MonoBehaviour
     public void HealthDeductingEffect()
     {
         StartCoroutine(FlashToRedAndBack());
+        Vector3 hitPos = transform.position - new Vector3(1, 0, 2);
+        Instantiate(hitEffectPrefab, hitPos, Quaternion.Euler(-90, 0, 0));
     }
 
     public void AddPeople()

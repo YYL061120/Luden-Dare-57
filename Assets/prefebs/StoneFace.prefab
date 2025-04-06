@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 1280186531656197168}
   - component: {fileID: 7080945439944233271}
   - component: {fileID: 1105041507903273322}
-  m_Layer: 0
+  - component: {fileID: 5572030577991337016}
+  m_Layer: 8
   m_Name: StoneFace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,3 +134,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 122
   m_CollisionDetection: 0
+--- !u!65 &5572030577991337016
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440469421790104565}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2000003, y: 2.8099995, z: 1.1743542}
+  m_Center: {x: -0.0000000016150126, y: 4.884494e-10, z: 0.080718994}

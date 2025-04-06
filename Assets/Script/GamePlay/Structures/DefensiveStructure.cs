@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DefensiveStructure : MonoBehaviour 
 {
+    public GameObject hitEffectPrefab;
+    public GameObject destroyEffectPrefab;
     public float maxHealth;
     public float currentHealth;
 
@@ -28,13 +30,15 @@ public class DefensiveStructure : MonoBehaviour
         if (currentHealth <= 0)
         {
             ST.facilitiesList.Remove(gameObject);
+            Instantiate(destroyEffectPrefab, transform.position, Quaternion.Euler(-90, 0, 0));
             Destroy(gameObject);
         }
     }
 
     public void HealthDeduction()
     {
-        StopAllCoroutines();
+        Vector3 hitPos = transform.position - new Vector3(1,0,2);
+        Instantiate(hitEffectPrefab, hitPos, Quaternion.Euler(-90, 0, 0));
         StartCoroutine(FlashThenFade());
     }
 

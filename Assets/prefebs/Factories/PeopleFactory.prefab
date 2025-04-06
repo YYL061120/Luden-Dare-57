@@ -120,6 +120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e46e80010b941d4fb846365d4135989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitEffectPrefab: {fileID: 23150035726137254, guid: 0881f4a613aace04e82d022145424cca, type: 3}
+  destroyEffectPrefab: {fileID: 8211956793553979857, guid: 3e3e14a2c28b71f4f8f7f5d28389370b, type: 3}
   canManufacture: 0
   peopleProduced: {fileID: 8804714330006354620, guid: 0920e5c90250bca4080d04a722d3c94a, type: 3}
   flashDuration: 0.1

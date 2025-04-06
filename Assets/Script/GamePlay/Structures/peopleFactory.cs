@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class peopleFactory : MonoBehaviour
 {
+    public GameObject hitEffectPrefab;
+    public GameObject destroyEffectPrefab;
     public bool canManufacture;
     public GameObject peopleProduced;
 
@@ -35,6 +37,7 @@ public class peopleFactory : MonoBehaviour
         //Debug.Log("People: "+manager.resource.peopleCount);
         if (currentHealth <= 0)
         {
+            Instantiate(destroyEffectPrefab, transform.position, Quaternion.Euler(-90, 0, 0));
             Destroy(gameObject);
         }
     }
@@ -59,8 +62,9 @@ public class peopleFactory : MonoBehaviour
 
     public void HealthDeduction()
     {
-        StopAllCoroutines();
         StartCoroutine(FlashToRedAndBack());
+        Vector3 hitPos = transform.position - new Vector3(1, 0, 2);
+        Instantiate(hitEffectPrefab, hitPos, Quaternion.Euler(-90, 0, 0));
     }
 
     public void PeoplePopOutEffect()
