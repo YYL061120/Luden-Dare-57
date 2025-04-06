@@ -6,11 +6,6 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager gameManager;
-
-    private bool isCounting = false;
-    [Header("Time")]
-    public float playingDuration = 0;
-
     public string currentSceneName;
 
     [Header("Current Resources")]
@@ -35,34 +30,15 @@ public class GameManager : MonoBehaviour
         currentIronCount = initialIronCount;
         currentConcreteCount = initialConcreteCount;
         currentPeopleCount = initialPeopleCount;
-
-        StartCounting();
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        IsCounting();
-    }
-
-    public void StartCounting()
-    {
-        playingDuration = 0;
-        isCounting = true;
-    }
-    
-    public void IsCounting()
-    {
-        if (isCounting)
+        if (Input.GetKeyDown(KeyCode.K) && TypeWriterTest.isTyping == false)
         {
-            playingDuration += Time.deltaTime;
+            TypeWriterTest.tyt.AnotherDialogue();
         }
-    }
-    
-    public float EndCounting()
-    {
-        isCounting = false;
-        return playingDuration;
     }
 
 

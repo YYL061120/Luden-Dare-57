@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ironFactory : MonoBehaviour
 {
-    public GameManager manager;
     public bool canManufacture = false;
 
     [Header("Occupacy and Health")]
@@ -23,7 +22,6 @@ public class ironFactory : MonoBehaviour
 
     private void Start()
     {
-        manager = GameObject.Find("GameManager").GetComponent<GameManager>();
         StartCoroutine(Manufacturing());
     }
     private void Update()
@@ -45,7 +43,7 @@ public class ironFactory : MonoBehaviour
             if (canManufacture)
             {
                 int addValue = currentEfficiency + currentPeople; //formula: 5钢/10s（+1钢/10s）
-                manager.currentIronCount += addValue;
+                GameManager.gameManager.currentIronCount += addValue;
             }
             yield return new WaitForSeconds(efficiency);
         }

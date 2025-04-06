@@ -1,21 +1,29 @@
+using NUnit.Framework;
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 public class TypeWriterTest : MonoBehaviour
 {
+    public GameObject stonehead;
+    public GameObject digger;
+    public static TypeWriterTest tyt;
     public float typingSpeed = 0.05f;
     public string[] sentencesOne;
     public int currentSentenceIndex = 0;
     private TextMeshProUGUI textMeshPro;
-    private bool isTyping = false;
+    public static bool isTyping = false;
     public AudioClip typingSound;
     public AudioSource source;
 
+    public int dialogueCount = 0;
+    public List<GameObject> dialogues = new List<GameObject>();
 
     void Start()
     {
         textMeshPro = GetComponent<TextMeshProUGUI>();
+        tyt = this;
     }
 
     void Update()
@@ -23,6 +31,14 @@ public class TypeWriterTest : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && !isTyping)
         {
             ShowNextSentence();
+            if(currentSentenceIndex == 3)
+            {
+                stonehead.SetActive(true);
+            }
+            if (currentSentenceIndex == 4)
+            {
+                digger.SetActive(true);
+            }
         }
     }
 
@@ -57,5 +73,23 @@ public class TypeWriterTest : MonoBehaviour
 
         currentSentenceIndex++;
         isTyping = false;
+    }
+
+    public void AnotherDialogue()
+    {
+        Debug.Log("index" + dialogueCount);
+        dialogues[dialogueCount].SetActive(false);
+        if (dialogueCount == 0)
+        {
+
+        }
+        
+        dialogueCount++;
+        dialogues[dialogueCount].SetActive(true);
+    }
+
+    public void ActivateTypeWriter()
+    {
+        dialogues[dialogueCount].SetActive(true);
     }
 }

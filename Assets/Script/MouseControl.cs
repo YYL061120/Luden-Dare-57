@@ -33,6 +33,10 @@ public class MouseControl : MonoBehaviour
         Vector3 target = GetMouseWorldPoint();
         movingCame();
         transform.position = Vector3.Lerp(transform.position, target, smoothSpeed * Time.deltaTime);
+        if (Input.GetKey(KeyCode.Mouse0))
+        {
+            Cursor.visible = false;
+        }
     }
 
     Vector3 GetMouseWorldPoint()
