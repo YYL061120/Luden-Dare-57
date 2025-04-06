@@ -11,6 +11,7 @@ public class MouseControl : MonoBehaviour
     void Start()
     {
         mainCamera = Camera.main;
+        Cursor.visible = false;
     }
 
     void Update()
@@ -26,6 +27,7 @@ public class MouseControl : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, raycastLayerMask))
         {
             return hit.point;
+            Cursor.visible = false;
         }
         return transform.position;
     }

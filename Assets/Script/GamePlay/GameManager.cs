@@ -50,6 +50,9 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         gameManager = this;
+        currentIronCount = initialIronCount;
+        currentConcreteCount = initialConcreteCount;
+        currentPeopleCount = initialPeopleCount;
     }
 
     // Update is called once per frame
