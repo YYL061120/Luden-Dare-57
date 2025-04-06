@@ -129,6 +129,6 @@ public class StoneFaceMoveEat : MonoBehaviour
 
     public void MovingSpeedChanger()
     {
-        float time = GameManager.gameManager.playingDuration;
+        //float time = GameManager.gameManager.playingDuration;
     }
 }
