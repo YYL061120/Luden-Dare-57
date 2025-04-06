@@ -64,7 +64,6 @@ public class TypeWriterTest : MonoBehaviour
         foreach (char letter in sentence.ToCharArray())
         {
             textMeshPro.text += letter;
-            Debug.Log("asd");
             if (typingSound != null && source)
             {
                 source.PlayOneShot(typingSound);
