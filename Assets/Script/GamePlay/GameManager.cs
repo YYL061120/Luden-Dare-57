@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager gameManager;
-
-
     public string currentSceneName;
 
     [Header("Current Resources")]
@@ -37,7 +35,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.K) && TypeWriterTest.isTyping == false)
+        {
+            TypeWriterTest.tyt.AnotherDialogue();
+        }
     }
 
 

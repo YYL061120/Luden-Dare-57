@@ -646,7 +646,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &559080832
 RectTransform:
   m_ObjectHideFlags: 0
@@ -762,7 +762,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Title
+  m_text: DIGGERS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1694,6 +1694,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
+  audioSource: {fileID: 0}
+  pScreamingOne: {fileID: 0}
+  pScreamingTwo: {fileID: 0}
+  pScreamingThree: {fileID: 0}
 --- !u!1 &1510469651
 GameObject:
   m_ObjectHideFlags: 0
@@ -1860,6 +1864,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSceneName: 
+  resource:
+    ironCount: 0
+    concreteCount: 0
+    peopleCount: 0
   initialIronCount: 0
   initialConcreteCount: 0
   initialPeopleCount: 0
