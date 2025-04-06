@@ -20,30 +20,9 @@ public class GameManager : MonoBehaviour
     public int initialConcreteCount = 0;
     public int initialPeopleCount = 0;
 
-    //[System.Serializable]
-    //public class Resource
-    //{
-    //    public int ironCount;
-    //    public int concreteCount;
-    //    public int peopleCount;
-
-    //    public Resource(int ironCount, int concreteCount, int peopleCount)
-    //    {
-    //        this.ironCount = ironCount;
-    //        this.concreteCount = concreteCount;
-    //        this.peopleCount = peopleCount;
-    //    }
-    //}
-    ////public Resource resource;
-    //[Header("Resource")]
-    //public int initialIronCount;
-    //public int initialConcreteCount;
-    //public int initialPeopleCount;
-
     private void Awake()
     {
         currentSceneName = SceneManager.GetActiveScene().name;
-        //resource = new Resource(initialIronCount, initialConcreteCount, initialPeopleCount);
     }
 
     // Start is called before the first frame update

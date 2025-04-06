@@ -35,9 +35,27 @@ public class PeopleProduced : MonoBehaviour
         transform.Rotate(Vector3.up * 180f * Time.deltaTime, Space.World);
 
         // 销毁条件（例如飞出屏幕或掉太低）
-        if (transform.position.y < -10f)
+        if (/*transform.position.y < -10f*/IsOffScreen(transform.position))
         {
+            Debug.Log("En");
             Destroy(gameObject);
         }
+    }
+
+    public bool IsOffScreen(Vector3 worldPos)
+    {
+        Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+
+        // 如果在摄像机后面（Z<0），就当做已经不在屏幕内
+        if (screenPos.z < 0)
+            return true;
+
+        if (screenPos.x < 0 || screenPos.x > Screen.width ||
+            screenPos.y < 0 || screenPos.y > Screen.height)
+        {
+            return true;
+        }
+
+        return false;
     }
 }
