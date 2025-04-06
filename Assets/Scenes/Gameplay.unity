@@ -954,7 +954,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 3.6929016, y: 0}
-  m_SizeDelta: {x: 1248.1768, y: 480.02}
+  m_SizeDelta: {x: 1248.1768, y: 510.8763}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1064067440
 MonoBehaviour:
@@ -978,12 +978,21 @@ MonoBehaviour:
   - Wha...
   - Bloody hell! We must get our diggers workin now!
   - It's not save to climb up, our only shoice is to dig down!
+  - All the people! Let's start to work! Produce materials and dig down, escape from
+    the stoneheads!
+  - Bruh I must remind u, as our diggers start working, we'll demand more supports,
+    more people and heat-resistant materials, we called it HRM....
+  - Sure, but, why?
+  - Mo'ai stoneheads are heavy, as they start chasing us, they will accelerate and
+    catch us up. To support our temperary base, we must adopt more materials and
+    work harder! Remember, your ultimate goal is to protect those WORKERS on the
+    top, not to protect us!
   currentSentenceIndex: 0
   typingSound: {fileID: 0}
   source: {fileID: 1064067441}
   dialogueCount: 0
   ck1: 4
-  ck2: 5
+  ck2: 6
   dialogues:
   - {fileID: 1064067438}
 --- !u!82 &1064067441
@@ -1105,8 +1114,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: cda0f353670271c4d852c5f84ff5dcc9, type: 2}
+  m_sharedMaterial: {fileID: 4974417159216636032, guid: cda0f353670271c4d852c5f84ff5dcc9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1130,8 +1139,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 71
-  m_fontSizeBase: 71
+  m_fontSize: 65
+  m_fontSizeBase: 65
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1168,7 +1177,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 1.0438843, y: 0, z: 0, w: 0}
+  m_margin: {x: 1.0438843, y: -27.820374, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
