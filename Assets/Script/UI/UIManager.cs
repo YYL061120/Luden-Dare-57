@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public GameManager gameManager;
+    public UIManager uiManager;
 
     public string currentSceneName;
 
@@ -28,6 +29,7 @@ public class UIManager : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene("Gameplay");
+        uiManager = this;
     }
 
     public void Credit()
