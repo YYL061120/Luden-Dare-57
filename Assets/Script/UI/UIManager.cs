@@ -16,16 +16,6 @@ public class UIManager : MonoBehaviour
         currentSceneName = SceneManager.GetActiveScene().name;
     }
 
-    //public void SceneIdentifier()
-    //{
-    //    switch (currentSceneName)
-    //    {
-    //        case "Startscreen":
-
-    //            break;
-    //    }
-    //}
-
     public void StartGame()
     {
         SceneManager.LoadScene("Gameplay");

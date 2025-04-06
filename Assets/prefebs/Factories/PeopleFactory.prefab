@@ -122,6 +122,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canManufacture: 0
   peopleProduced: {fileID: 8804714330006354620, guid: 0920e5c90250bca4080d04a722d3c94a, type: 3}
+  flashDuration: 0.1
+  fadeDuration: 0.35
   maxOccupacy: 0
   currentPeople: 0
   maxHealth: 0

@@ -79,19 +79,6 @@ public class StoneFaceMoveEat : MonoBehaviour
         }
     }
 
-    //private IEnumerator WaitAndStartEating()
-    //{
-    //    yield return new WaitForSeconds(5f);
-
-    //    if (!isMovingState && !isDealingDamage)
-    //    {
-    //        damageCoroutine = StartCoroutine(DealDamage());
-    //        isDealingDamage = true;
-    //    }
-
-    //    eatDelayCoroutine = null;
-    //}
-
     public IEnumerator DealDamage()
     {
         while (!isMovingState)
