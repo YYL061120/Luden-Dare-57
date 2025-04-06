@@ -20,6 +20,7 @@ public class peopleFactory : MonoBehaviour
     private void Start()
     {
         StartCoroutine(Manufacturing());
+        currentHealth = maxHealth;
     }
     private void Update()
     {

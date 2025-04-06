@@ -161,12 +161,12 @@ public class Building : MonoBehaviour
                     break;
                 case 2:
                     Instantiate(IronRoom, this.transform.position, Quaternion.identity);
-                    GameManager.gameManager.currentIronCount -= 75;
+                    GameManager.gameManager.currentIronCount -= 50;
                     Destroy(this.gameObject);
                     break;
                 case 3:
                     Instantiate(ConcreteRoom, this.transform.position, Quaternion.identity);
-                    GameManager.gameManager.currentIronCount -= 75;
+                    GameManager.gameManager.currentIronCount -= 30;
                     Destroy(this.gameObject);
                     break;
 

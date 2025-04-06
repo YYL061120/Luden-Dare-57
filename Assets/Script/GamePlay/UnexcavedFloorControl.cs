@@ -38,6 +38,7 @@ public class UnexcavedFloorControl : MonoBehaviour
         if (currentHealth <= 0)
         {
             Instantiate(excavedFloor,this.gameObject.transform.position,Quaternion.identity);
+            UnexcavedFloorGenerator.unexcavedFloorGenerator.theList.Remove(this.gameObject);
             Destroy(this.gameObject);
         }
         if (healthBar != null)

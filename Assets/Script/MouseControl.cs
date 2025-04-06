@@ -5,6 +5,7 @@ using static UnityEngine.GraphicsBuffer;
 
 public class MouseControl : MonoBehaviour
 {
+    public static MouseControl mouseControl;
     public float smoothSpeed = 5f;
     private Camera mainCamera;
     public LayerMask raycastLayerMask;
@@ -23,8 +24,10 @@ public class MouseControl : MonoBehaviour
 
     void Start()
     {
+        mouseControl = this;
         mainCamera = Camera.main;
         Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Confined;
         targetY = mainCamera.transform.position.y;
     }
 
@@ -35,6 +38,7 @@ public class MouseControl : MonoBehaviour
         transform.position = Vector3.Lerp(transform.position, target, smoothSpeed * Time.deltaTime);
         if (Input.GetKey(KeyCode.Mouse0))
         {
+            Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = false;
         }
     }

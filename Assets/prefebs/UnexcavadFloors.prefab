@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UnexcavedFloorModle: {fileID: 5644998763608213358}
   excavedFloor: {fileID: 1479133778466327087, guid: 2ccdddfb0b470434d9eef9a7a26f4a8f, type: 3}
-  defaultHealth: 500
+  defaultHealth: 750
   currentHealth: 0
   amplitude: 0.08
   frequency: 40

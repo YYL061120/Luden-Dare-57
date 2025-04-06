@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1565793767940023381}
   m_Layer: 7
   m_Name: PeopleFactory
-  m_TagString: Untagged
+  m_TagString: Facilities
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,5 +124,5 @@ MonoBehaviour:
   peopleProduced: {fileID: 8804714330006354620, guid: 0920e5c90250bca4080d04a722d3c94a, type: 3}
   maxOccupacy: 0
   currentPeople: 0
-  maxHealth: 0
+  maxHealth: 50
   currentHealth: 0
