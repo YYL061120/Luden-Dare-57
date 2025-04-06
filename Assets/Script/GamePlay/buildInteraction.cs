@@ -7,7 +7,7 @@ using UnityEngine;
 public class buildInteraction : MonoBehaviour
 {
     public static buildInteraction buildInt;
-    public GameObject CurrentInteractingBlock;
+    //public GameObject CurrentInteractingBlock;
 
 
     public float amountofBoost;
