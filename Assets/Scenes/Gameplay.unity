@@ -456,7 +456,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSceneName: 
-  initialIronCount: 0
+  resource:
+    ironCount: 0
+    concreteCount: 0
+    peopleCount: 0
+  initialIronCount: 2
   initialConcreteCount: 0
   initialPeopleCount: 0
 --- !u!1 &1692045208
@@ -471,6 +475,7 @@ GameObject:
   - component: {fileID: 1692045211}
   - component: {fileID: 1692045210}
   - component: {fileID: 1692045209}
+  - component: {fileID: 1692045213}
   m_Layer: 0
   m_Name: Cube (4)
   m_TagString: Untagged
@@ -566,6 +571,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1692045213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692045208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 873b80ac3749e0f468f5b14b21d40552, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 0}
+  canManufacture: 0
+  maxOccupacy: 0
+  currentPeople: 0
+  maxHealth: 0
+  currentHealth: 0
+  currentEfficiency: 5
 --- !u!1 &1820861289
 GameObject:
   m_ObjectHideFlags: 0
@@ -581,7 +605,7 @@ GameObject:
   - component: {fileID: 1820861294}
   m_Layer: 2
   m_Name: ThePlayerReincarnation
-  m_TagString: Untagged
+  m_TagString: Incarnation
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -723,6 +747,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
+  audioSource: {fileID: 0}
+  pScreamingOne: {fileID: 0}
+  pScreamingTwo: {fileID: 0}
+  pScreamingThree: {fileID: 0}
 --- !u!1 &1947835597
 GameObject:
   m_ObjectHideFlags: 0

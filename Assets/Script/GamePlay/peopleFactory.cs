@@ -36,9 +36,9 @@ public class peopleFactory : MonoBehaviour
             else canManufacture = false;
             if (canManufacture)
             {
-                manager.resource.peopleCount++;
+                manager.currentPeopleCount++;
             }
-            float waitingTime = efficiency - manager.resource.peopleCount * 3f; //formula: 60s/人（-3s/人）
+            float waitingTime = efficiency - manager.currentPeopleCount * 3f; //formula: 60s/人（-3s/人）
             yield return new WaitForSeconds(waitingTime);
         }
 

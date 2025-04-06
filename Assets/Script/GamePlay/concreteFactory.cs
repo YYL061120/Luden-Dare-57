@@ -27,7 +27,7 @@ public class concreteFactory : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log("Concrete: "+manager.resource.concreteCount);
+        //Debug.Log("Concrete: "+manager.currentConcreteCount);
     }
 
     public IEnumerator Manufacturing()
@@ -40,7 +40,7 @@ public class concreteFactory : MonoBehaviour
             if (canManufacture)
             {
                 int addValue = currentEfficiency + currentPeople; //5材料/20s（+1材料/20s）
-                manager.resource.ironCount += addValue;
+                manager.currentConcreteCount += addValue;
             }
             yield return new WaitForSeconds(efficiency);
         }
