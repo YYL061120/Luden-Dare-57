@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using DG.Tweening;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -23,7 +25,10 @@ public class peopleFactory : MonoBehaviour
     public int currentPeople;
     public float maxHealth;
     public float currentHealth;
+    public Boolean ismousecollider;
 
+    public Vector3 initalPos;
+    public Vector3 initalScale;
     private void Awake()
     {
 
@@ -31,13 +36,16 @@ public class peopleFactory : MonoBehaviour
 
     private void Start()
     {
+        initalPos = transform.position;
+        initalScale = transform.localScale;
         rend = GetComponent<Renderer>();
         originalColor = rend.material.color;
         StartCoroutine(Manufacturing());
         currentHealth = maxHealth;
     }
-    private void Update()
+    private void FixedUpdate()
     {
+        AddPeople();
         if (stoneface != null)
         {
             if (stoneface.activeSelf == true)
@@ -59,6 +67,17 @@ public class peopleFactory : MonoBehaviour
         if (collision.transform.tag == "StoneFace")
         {
             stoneface = collision.gameObject;
+        }
+        if (collision.transform.tag == "Incarnation")
+        {
+            ismousecollider = true;
+        }
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.transform.tag == "Incarnation")
+        {
+            ismousecollider = false;
         }
     }
 
@@ -89,20 +108,34 @@ public class peopleFactory : MonoBehaviour
 
     public void PeoplePopOutEffect()
     {
-        Vector3 offset = new Vector3(Random.Range(-0.5f, 0.5f), 0, Random.Range(-0.5f, 0.5f));
+        Vector3 offset = new Vector3(UnityEngine.Random.Range(-0.5f, 0.5f), 0, UnityEngine.Random.Range(-0.5f, 0.5f));
         Vector3 spawnPos = transform.position + offset;
-        Quaternion randomRot = Quaternion.Euler(0, Random.Range(0f, 360f), 0);
+        Quaternion randomRot = Quaternion.Euler(0, UnityEngine.Random.Range(0f, 360f), 0);
 
         Instantiate(peopleProduced, spawnPos, randomRot);
     }
 
     public void AddPeople()
     {
-        if (currentPeople < maxOccupacy)
+        if (Input.GetMouseButtonDown(1))
         {
-            currentPeople++;
-            GameManager.gameManager.currentPeopleCount--;
+            if (ismousecollider)
+            {
+                if (currentPeople < maxOccupacy)
+                {
+                    if (GameManager.gameManager.currentPeopleCount > 0)
+                    {
+                        currentPeople++;
+                        GameManager.gameManager.currentPeopleCount--;
+                        transform.DOShakePosition(0.15f, 0.15f, 40).OnComplete(() => transform.position = initalPos);
+                        transform.DOShakeScale(0.15f, 0.3f, 30).OnComplete(() => transform.localScale = initalScale);
+                    }
+
+                }
+            }
+
         }
+
     }
 
     private IEnumerator FlashToRedAndBack()

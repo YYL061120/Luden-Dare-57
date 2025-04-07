@@ -215,11 +215,15 @@ MonoBehaviour:
   canManufacture: 0
   flashDuration: 0.1
   fadeDuration: 0.35
-  maxOccupacy: 0
+  stoneface: {fileID: 0}
+  maxOccupacy: 8
   currentPeople: 0
   maxHealth: 25
   currentHealth: 50
   currentEfficiency: 5
+  ismousecollider: 0
+  initalPos: {x: 0, y: 0, z: 0}
+  initalScale: {x: 0, y: 0, z: 0}
 --- !u!1 &1190046903710384283
 GameObject:
   m_ObjectHideFlags: 0
