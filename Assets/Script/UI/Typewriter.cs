@@ -70,14 +70,13 @@ public class TypeWriterTest : MonoBehaviour
         isTyping = true;
         textMeshPro.text = "";
 
+        if (typingSound != null && source)
+        {
+            source.PlayOneShot(typingSound);
+        }
         foreach (char letter in sentence.ToCharArray())
         {
             textMeshPro.text += letter;
-            if (typingSound != null && source)
-            {
-                source.PlayOneShot(typingSound);
-            }
-
             yield return new WaitForSeconds(typingSpeed);
         }
 

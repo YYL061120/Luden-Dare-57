@@ -1,7 +1,10 @@
+using NUnit.Framework;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 using UnityEngine.UI;
+using System.Security.Cryptography.X509Certificates;
 public class UIManager : MonoBehaviour
 {
     public GameManager gameManager;
@@ -21,15 +24,37 @@ public class UIManager : MonoBehaviour
     [Header("Startscreen")]
     public GameObject CreditPage;
 
+    [Header("Tutorial Pages")]
+    public GameObject Tutorial;
+    public List<GameObject> tutorialPages = new List<GameObject>();
+    public int tutorialPageIndex = 0;
+
     private void Awake()
     {
         currentSceneName = SceneManager.GetActiveScene().name;
-        if(currentSceneName == "entering" ||currentSceneName == "Gameplay")
+        Tutorial = GameObject.Find("Tutorial");
+        Tutorial.SetActive(false);
+        if (currentSceneName == "Entering" ||currentSceneName == "Gameplay")
         {
             peopleText = people.GetComponent<TextMeshProUGUI>();
             concreteText = concrete.GetComponent<TextMeshProUGUI>();
             ironText = iron.GetComponent<TextMeshProUGUI>();
         }
+    }
+
+    private void FixedUpdate()
+    {
+        tutorialPageIndex = Mathf.Clamp(tutorialPageIndex, 0, tutorialPages.Count-1);
+        for(int i = 0; i < tutorialPages.Count; i++)
+        {
+            if(i!=tutorialPageIndex)    tutorialPages[i].gameObject.SetActive(false);
+        }
+        tutorialPages[tutorialPageIndex].gameObject.SetActive(true);
+    }
+
+    private void Update()
+    {
+        Alternative();
     }
 
     private void LateUpdate()
@@ -61,5 +86,39 @@ public class UIManager : MonoBehaviour
         peopleText.text = GameManager.gameManager.currentPeopleCount.ToString();
         concreteText.text = GameManager.gameManager.currentConcreteCount.ToString();
         ironText.text = GameManager.gameManager.currentIronCount.ToString() ;
+    }
+
+    public void NextPage()
+    {
+        tutorialPageIndex++;
+    }
+
+    public void PreviousPage()
+    {
+        tutorialPageIndex--;
+    }
+
+    public void OCTutorial()
+    {
+        if(Tutorial.activeSelf == false)
+        {
+            Tutorial.SetActive(true);
+        }
+        else
+        {
+            Tutorial.SetActive(false) ;
+        }
+    }
+
+    public void Alternative()
+    {
+        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            PreviousPage();
+        }
+        if(Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            NextPage();
+        }
     }
 }

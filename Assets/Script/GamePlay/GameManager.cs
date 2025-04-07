@@ -40,8 +40,4 @@ public class GameManager : MonoBehaviour
             TypeWriterTest.tyt.AnotherDialogue();
         }
     }
-
-
-
-
 }
