@@ -434,7 +434,6 @@ GameObject:
   m_Component:
   - component: {fileID: 631939596}
   - component: {fileID: 631939597}
-  - component: {fileID: 631939598}
   - component: {fileID: 631939599}
   m_Layer: 5
   m_Name: GameObject
@@ -491,18 +490,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &631939598
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 631939595}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aaaa82611df48874b9e0e889c5aa1c7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &631939599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -516,7 +503,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSceneName: 
-  canvas: {fileID: 0}
   currentIronCount: 0
   currentConcreteCount: 0
   currentPeopleCount: 0
@@ -1335,7 +1321,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSceneName: 
-  canvas: {fileID: 0}
   currentIronCount: 0
   currentConcreteCount: 0
   currentPeopleCount: 0
