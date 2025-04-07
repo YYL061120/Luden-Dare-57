@@ -26,11 +26,12 @@ public class buildInteraction : MonoBehaviour
     public Sprite HumanRSp;
     public Sprite IronRSp;
     public Sprite ConcreteRSp;
+    public Sprite BoostingSp;
 
     public SpriteRenderer StatesRenderer;
     void Start()
     {
-        StatesRenderer.sprite = null;
+        StatesRenderer.sprite = IronRSp;
         buildInt = this;
     }
 
@@ -67,6 +68,9 @@ public class buildInteraction : MonoBehaviour
     {
         switch (V)
         {
+            case 0:
+                StatesRenderer.sprite = BoostingSp;
+                break;
             case 1:
                 StatesRenderer.sprite = HumanRSp;
                 break;
