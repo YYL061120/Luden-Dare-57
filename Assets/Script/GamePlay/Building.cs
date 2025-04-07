@@ -52,7 +52,7 @@ public class Building : MonoBehaviour
                 case 0:
                     if (constructing)
                     {
-                        if (Input.GetKeyDown(KeyCode.Mouse0))
+                        if (Input.GetKeyDown(KeyCode.Mouse0)|| Input.GetKeyUp(KeyCode.Mouse0))
                         {
                             CurrentConstructCD += buildInteraction.buildInt.amountofBoost;
                         }
@@ -64,7 +64,7 @@ public class Building : MonoBehaviour
                     {
                         if (constructionState&&!constructing)
                         {
-                            
+                            GameManager.gameManager.currentIronCount -= 75;
                             FutureBuildingType = 1;
                             constructing = true;
                         }
@@ -76,6 +76,7 @@ public class Building : MonoBehaviour
                     {
                         if (constructionState && !constructing)
                         {
+                            GameManager.gameManager.currentIronCount -= 50;
                             FutureBuildingType = 2;
                             constructing = true;
                         }
@@ -87,6 +88,7 @@ public class Building : MonoBehaviour
                     {
                         if (constructionState && !constructing)
                         {
+                            GameManager.gameManager.currentIronCount -= 30;
                             FutureBuildingType = 3;
                             constructing = true;
                         }
@@ -109,7 +111,9 @@ public class Building : MonoBehaviour
     {
         if (collision.transform.tag == "Incarnation")
         {
-            interacting = false;
+                interacting = false;
+            
+            
         }
     }
 
@@ -117,6 +121,7 @@ public class Building : MonoBehaviour
     {
         if (interacting)
         {
+            
             if (!constructing)
             {
                 able.SetActive(constructionState);
@@ -124,11 +129,14 @@ public class Building : MonoBehaviour
             }
             else
             {
+                interacting = false;
                 healthBar.gameObject.SetActive(true);
-                able.SetActive(!constructionState);
-                notAble.SetActive(!constructionState);
-                progressing.SetActive(constructionState);
+                able.SetActive(false);
+                notAble.SetActive(false);
+                progressing.SetActive(true);
             }
+                
+            
             
         }
         else
@@ -156,17 +164,17 @@ public class Building : MonoBehaviour
             {
                 case 1:
                     Instantiate(HumanRoom, this.transform.position, Quaternion.identity);
-                    GameManager.gameManager.currentIronCount -= 75;
+                    
                     Destroy(this.gameObject);
                     break;
                 case 2:
                     Instantiate(IronRoom, this.transform.position, Quaternion.identity);
-                    GameManager.gameManager.currentIronCount -= 50;
+                    
                     Destroy(this.gameObject);
                     break;
                 case 3:
                     Instantiate(ConcreteRoom, this.transform.position, Quaternion.identity);
-                    GameManager.gameManager.currentIronCount -= 30;
+                    
                     Destroy(this.gameObject);
                     break;
 

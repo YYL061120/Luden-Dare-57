@@ -1037,7 +1037,7 @@ MonoBehaviour:
   HumanRoom: {fileID: 3532765311178927575, guid: f46f4cc20d1edb649a1864cb0e88f954, type: 3}
   IronRoom: {fileID: 313079420444739295, guid: 94d592b345baf924eb88bf98c792fb97, type: 3}
   ConcreteRoom: {fileID: 7368724747293671093, guid: 2a9e7ae193f7b524497846d9f3fc5643, type: 3}
-  DefualtConstructCD: 12
+  DefualtConstructCD: 20
   CurrentConstructCD: 0
 --- !u!65 &5481349190020151806
 BoxCollider:
@@ -1535,7 +1535,7 @@ MonoBehaviour:
   HumanRoom: {fileID: 3532765311178927575, guid: f46f4cc20d1edb649a1864cb0e88f954, type: 3}
   IronRoom: {fileID: 313079420444739295, guid: 94d592b345baf924eb88bf98c792fb97, type: 3}
   ConcreteRoom: {fileID: 7368724747293671093, guid: 2a9e7ae193f7b524497846d9f3fc5643, type: 3}
-  DefualtConstructCD: 12
+  DefualtConstructCD: 20
   CurrentConstructCD: 0
 --- !u!65 &38317657714828503
 BoxCollider:
@@ -3204,7 +3204,7 @@ MonoBehaviour:
   HumanRoom: {fileID: 3532765311178927575, guid: f46f4cc20d1edb649a1864cb0e88f954, type: 3}
   IronRoom: {fileID: 313079420444739295, guid: 94d592b345baf924eb88bf98c792fb97, type: 3}
   ConcreteRoom: {fileID: 7368724747293671093, guid: 2a9e7ae193f7b524497846d9f3fc5643, type: 3}
-  DefualtConstructCD: 12
+  DefualtConstructCD: 20
   CurrentConstructCD: 0
 --- !u!65 &3333583612164346564
 BoxCollider:
@@ -3287,7 +3287,7 @@ MonoBehaviour:
   HumanRoom: {fileID: 3532765311178927575, guid: f46f4cc20d1edb649a1864cb0e88f954, type: 3}
   IronRoom: {fileID: 313079420444739295, guid: 94d592b345baf924eb88bf98c792fb97, type: 3}
   ConcreteRoom: {fileID: 7368724747293671093, guid: 2a9e7ae193f7b524497846d9f3fc5643, type: 3}
-  DefualtConstructCD: 12
+  DefualtConstructCD: 20
   CurrentConstructCD: 0
 --- !u!65 &5078177544685786828
 BoxCollider:
