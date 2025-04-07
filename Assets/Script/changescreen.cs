@@ -15,4 +15,8 @@ public void changeSceneg()
     {
         SceneManager.LoadScene("Gameplay");
     }
+public void changeScenes()
+    {
+        SceneManager.LoadScene("Startscreen");
+    }
 }
