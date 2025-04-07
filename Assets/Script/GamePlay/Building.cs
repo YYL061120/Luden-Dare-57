@@ -39,7 +39,7 @@ public class Building : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Thefunction();
     }
     private void FixedUpdate()
     {
@@ -55,16 +55,7 @@ public class Building : MonoBehaviour
             switch (buildInteraction.buildInt.interactionMode)
             {
                 case 0:
-                    if (constructing)
-                    {
-                        if (Input.GetKeyDown(KeyCode.Mouse0)|| Input.GetKeyUp(KeyCode.Mouse0))
-                        {
-                            CurrentConstructCD += buildInteraction.buildInt.amountofBoost;
-                            transform.DOShakePosition(0.15f,0.15f,40).OnComplete(() => transform.position=initalpos);
-                            transform.DOShakeScale(0.15f,0.3f,30).OnComplete(() => transform.localScale = initialScale);
-
-                        }
-                    }
+                    
                     break;
                 case 1:
                     constructionState = (GameManager.gameManager.currentIronCount >= 75);
@@ -113,7 +104,27 @@ public class Building : MonoBehaviour
         
     }
 
-    
+    public void Thefunction()
+    {
+        if (interacting)
+        {
+            if (constructing)
+            {
+                if (Input.GetKeyDown(KeyCode.Mouse0))
+                {
+                    if (buildInteraction.buildInt.interactionMode == 0)
+                    {
+                        CurrentConstructCD += buildInteraction.buildInt.amountofBoost;
+                        transform.DOShakePosition(0.15f, 0.15f, 40).OnComplete(() => transform.position = initalpos);
+                        transform.DOShakeScale(0.15f, 0.3f, 30).OnComplete(() => transform.localScale = initialScale);
+                    }
+
+
+                }
+            }
+        }
+        
+    }
 
     private void OnCollisionExit(Collision collision)
     {

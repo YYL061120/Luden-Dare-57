@@ -434,6 +434,7 @@ GameObject:
   m_Component:
   - component: {fileID: 631939596}
   - component: {fileID: 631939597}
+  - component: {fileID: 631939599}
   m_Layer: 5
   m_Name: GameObject
   m_TagString: Untagged
@@ -489,6 +490,25 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &631939599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 631939595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12edc17c6b991b449b71ef74d90b9735, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentSceneName: 
+  currentIronCount: 0
+  currentConcreteCount: 0
+  currentPeopleCount: 0
+  initialIronCount: 0
+  initialConcreteCount: 0
+  initialPeopleCount: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1075,7 +1095,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8fc8c203c5f317244839af4bdbb7ecbf, type: 2}
+  - {fileID: 2100000, guid: 64089256671bda94baa383b5b9a50e6c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1826,7 +1846,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8fc8c203c5f317244839af4bdbb7ecbf, type: 2}
+  - {fileID: 2100000, guid: 64089256671bda94baa383b5b9a50e6c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2368,7 +2388,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 440469421790104565, guid: 651bd2c7bb9f378438758eae69922a62, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2787067607429990515, guid: 651bd2c7bb9f378438758eae69922a62, type: 3}
       propertyPath: m_LocalPosition.x
