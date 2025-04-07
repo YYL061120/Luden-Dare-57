@@ -605,7 +605,7 @@ GameObject:
   - component: {fileID: 631939596}
   - component: {fileID: 631939597}
   m_Layer: 5
-  m_Name: GameObject
+  m_Name: resources
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -626,11 +626,11 @@ RectTransform:
   - {fileID: 968230308}
   - {fileID: 999482682}
   - {fileID: 1152316025}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1384655586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 68.130005, y: 1066.02}
+  m_AnchoredPosition: {x: 68.130005, y: -13.97998}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &631939597
@@ -2490,6 +2490,7 @@ RectTransform:
   - {fileID: 671649702}
   - {fileID: 802367373}
   - {fileID: 1064067439}
+  - {fileID: 631939596}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3675,7 +3676,6 @@ SceneRoots:
   - {fileID: 1211471995}
   - {fileID: 3183706521935304019}
   - {fileID: 362349542}
-  - {fileID: 631939596}
   - {fileID: 1384655586}
   - {fileID: 167023793}
   - {fileID: 446164686}
