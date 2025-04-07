@@ -99,13 +99,14 @@ public class DiggerControll : MonoBehaviour
         if (buildInteraction.buildInt.interactionMode == 5)
         {
             Selected = true;
-            Constructable = (GameManager.gameManager.currentIronCount >= AmountOfResources && GameManager.gameManager.currentConcreteCount >= AmountOfResources);
+            Constructable = (GameManager.gameManager.currentIronCount >= AmountOfResources && GameManager.gameManager.currentConcreteCount >= AmountOfResources && GameManager.gameManager.currentPeopleCount >= AmountOfResources);
             if (Input.GetMouseButtonDown(0))
             {
                 if (Constructable)
                 {
                     GameManager.gameManager.currentIronCount -= AmountOfResources;
                     GameManager.gameManager.currentConcreteCount -= AmountOfResources;
+                    GameManager.gameManager.currentPeopleCount -= AmountOfResources;
                     AmountOfResources += AmountToIncrease;
                     efficency++;
                 }
