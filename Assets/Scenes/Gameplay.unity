@@ -1322,7 +1322,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1064067439
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1370,7 +1370,7 @@ MonoBehaviour:
   source: {fileID: 1064067441}
   dialogueCount: 0
   ck1: 4
-  ck2: 5
+  ck2: 6
   dialogues:
   - {fileID: 1064067438}
 --- !u!82 &1064067441
@@ -2947,7 +2947,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7669325196836316908, guid: 39a073294fd93d548b423b87f1f1bd56, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
