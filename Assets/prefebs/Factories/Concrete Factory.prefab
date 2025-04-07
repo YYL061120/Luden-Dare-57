@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5675344481483814672}
   - component: {fileID: 2528310057659349874}
   - component: {fileID: 5490514031188459402}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: Concrete Factory
   m_TagString: Facilities
   m_Icon: {fileID: 0}

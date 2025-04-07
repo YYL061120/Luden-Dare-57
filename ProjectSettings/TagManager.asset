@@ -10,6 +10,7 @@ TagManager:
   - Incarnation
   - StoneFace
   - Facilities
+  - Room
   layers:
   - Default
   - TransparentFX
@@ -20,8 +21,8 @@ TagManager:
   - UnExcavedFloor
   - ExcavedFloor
   - StoneFace
-  - 
-  - 
+  - Facility
+  - EntireExcavedFloor
   - 
   - 
   - 
