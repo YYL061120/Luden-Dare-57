@@ -27,6 +27,8 @@ public class buildInteraction : MonoBehaviour
     public Sprite IronRSp;
     public Sprite ConcreteRSp;
     public Sprite BoostingSp;
+    public Sprite DrillSp;
+    public Sprite ConBlockSp;
 
     public SpriteRenderer StatesRenderer;
     void Start()
@@ -55,7 +57,7 @@ public class buildInteraction : MonoBehaviour
             if (char.IsDigit(c))
             {
                 int value = c - '0'; 
-                if (value >= 0 && value <= 4)
+                if (value >= 0 && value <= 6)
                 {
                     interactionMode = value;
                     actionUpdate(value);
@@ -79,6 +81,12 @@ public class buildInteraction : MonoBehaviour
                 break;
             case 3:
                 StatesRenderer.sprite = ConcreteRSp;
+                break;
+            case 4:
+                StatesRenderer.sprite = ConBlockSp;
+                break;
+            case 5:
+                StatesRenderer.sprite = DrillSp;
                 break;
         }
     }

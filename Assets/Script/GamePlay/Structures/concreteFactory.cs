@@ -45,9 +45,14 @@ public class concreteFactory : MonoBehaviour
         originalColor = rend.material.color;
         StartCoroutine(Manufacturing());
     }
-    private void FixedUpdate()
+
+    private void Update()
     {
         AddPeople();
+    }
+    private void FixedUpdate()
+    {
+        
         if (stoneface != null)
         {
             if (stoneface.activeSelf == true)
