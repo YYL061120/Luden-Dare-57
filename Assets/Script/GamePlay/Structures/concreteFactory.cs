@@ -14,6 +14,9 @@ public class concreteFactory : MonoBehaviour
     private Renderer rend;
     private Color originalColor;
 
+    public GameObject stoneface;
+    private StoneFaceMoveEat ST;
+
     [Header("Occupacy and Health")]
     public int maxOccupacy;
     public int currentPeople;
@@ -36,11 +39,27 @@ public class concreteFactory : MonoBehaviour
     }
     private void Update()
     {
+        if (stoneface != null)
+        {
+            if (stoneface.activeSelf == true)
+            {
+                ST = GameObject.Find("StoneFace").GetComponent<StoneFaceMoveEat>();
+            }
+        }
         //Debug.Log("Concrete: "+manager.currentConcreteCount);
         if (currentHealth <= 0)
         {
+            ST.facilitiesList.Remove(this.gameObject);
             Instantiate(destroyEffectPrefab, transform.position, Quaternion.Euler(-90, 0, 0));
             Destroy(gameObject);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.tag == "StoneFace")
+        {
+            stoneface = collision.gameObject;
         }
     }
 

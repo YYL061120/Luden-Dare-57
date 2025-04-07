@@ -11,7 +11,7 @@ public class DefensiveStructure : MonoBehaviour
     public float maxHealth;
     public float currentHealth;
 
-        public float flashDuration = 0.5f;
+    public float flashDuration = 0.5f;
     public float fadeDuration = 1.0f;
 
     private Renderer rend;
