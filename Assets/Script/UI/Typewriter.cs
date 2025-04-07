@@ -1,13 +1,17 @@
 using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TypeWriterTest : MonoBehaviour
 {
     public GameObject stonehead;
     public GameObject digger;
+    public GameObject conti;
+    public GameObject text;
     public static TypeWriterTest tyt;
     public float typingSpeed = 0.05f;
     public string[] sentencesOne;
@@ -20,6 +24,7 @@ public class TypeWriterTest : MonoBehaviour
     public int dialogueCount = 0;
     public int ck1;
     public int ck2;
+    public int cke;
     public List<GameObject> dialogues = new List<GameObject>();
 
     void Start()
@@ -73,6 +78,11 @@ public class TypeWriterTest : MonoBehaviour
         }
 
         currentSentenceIndex++;
+        if (currentSentenceIndex == cke)
+        {
+            text.SetActive(false);
+            conti.SetActive(true);
+        }
         isTyping = false;
     }
 
@@ -80,7 +90,6 @@ public class TypeWriterTest : MonoBehaviour
     {
         Debug.Log("index" + dialogueCount);
         dialogues[dialogueCount].SetActive(false);
-        
         dialogueCount++;
         dialogues[dialogueCount].SetActive(true);
     }
