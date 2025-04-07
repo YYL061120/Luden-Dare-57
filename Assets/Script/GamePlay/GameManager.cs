@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager gameManager;
     public string currentSceneName;
 
+
     [Header("Current Resources")]
     public int currentIronCount = 0;
     public int currentConcreteCount = 0;
@@ -35,13 +36,22 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K) && TypeWriterTest.isTyping == false)
-        {
-            TypeWriterTest.tyt.AnotherDialogue();
-        }
+        ResourcesConstraint();
+        IsGameEnd();
     }
 
-
-
-
+    public void ResourcesConstraint()
+    {
+         currentPeopleCount = Mathf.Clamp(currentPeopleCount,0,1000000);
+         currentIronCount = Mathf.Clamp(currentIronCount, 0, 1000000);
+         currentConcreteCount = Mathf.Clamp(currentConcreteCount, 0, 1000000);
+        
+    }
+    public void IsGameEnd()
+    {
+        if (currentPeopleCount <= 0)
+        {
+            SceneManager.LoadScene("Defeat");
+        }
+    }
 }
