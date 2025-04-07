@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6663665033142664602}
   - component: {fileID: 6571696662163941111}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 7634366050824570756}
   - component: {fileID: 4333929991970962129}
   - component: {fileID: 6629254912533279970}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: Iron Factory
   m_TagString: Facilities
   m_Icon: {fileID: 0}
@@ -230,7 +230,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8530606638178050522}
   - component: {fileID: 6672003491936130562}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -316,7 +316,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5284227015993900146}
   - component: {fileID: 3827582222837318684}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: Center
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -402,7 +402,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7402531223936210284}
   - component: {fileID: 5013888905337090707}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}

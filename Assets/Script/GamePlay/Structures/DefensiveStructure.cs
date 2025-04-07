@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DefensiveStructure : MonoBehaviour 
 {
+    public healthBar healthBar;
     public GameObject hitEffectPrefab;
     public GameObject destroyEffectPrefab;
     public GameObject stoneface;
@@ -20,22 +21,31 @@ public class DefensiveStructure : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        currentHealth = maxHealth;
+        stoneface = GameObject.FindGameObjectWithTag("StoneFace");
+        healthBar.SetHealth(currentHealth);
+        healthBar.SetMaxHealth(maxHealth);
         rend = GetComponent<Renderer>();
         originalColor = rend.material.color;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if (stoneface.activeSelf == true)
+        healthBar.SetHealth(currentHealth);
+        if (stoneface != null)
         {
-            ST = GameObject.Find("StoneFace").GetComponent<StoneFaceMoveEat>();
+            if (stoneface.activeSelf == true)
+            {
+                ST = GameObject.Find("StoneFace").GetComponent<StoneFaceMoveEat>();
+            }
         }
+        
         if (currentHealth <= 0)
         {
-            ST.facilitiesList.Remove(gameObject);
+            ST.facilitiesList.Remove(this.gameObject);
             Instantiate(destroyEffectPrefab, transform.position, Quaternion.Euler(-90, 0, 0));
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
     }
 
@@ -44,6 +54,13 @@ public class DefensiveStructure : MonoBehaviour
         Vector3 hitPos = transform.position - new Vector3(1,0,2);
         Instantiate(hitEffectPrefab, hitPos, Quaternion.Euler(-90, 0, 0));
         StartCoroutine(FlashThenFade());
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.transform.tag== "StoneFace")
+        {
+            stoneface = collision.gameObject;
+        }
     }
 
 
