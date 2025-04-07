@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using DG.Tweening;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,6 +16,9 @@ public class concreteFactory : MonoBehaviour
     private Renderer rend;
     private Color originalColor;
 
+    public GameObject stoneface;
+    private StoneFaceMoveEat ST;
+
     [Header("Occupacy and Health")]
     public int maxOccupacy;
     public int currentPeople;
@@ -23,6 +28,9 @@ public class concreteFactory : MonoBehaviour
     [Header("Efficiency")]
     public int currentEfficiency = 5;
 
+    public Vector3 initalPos;
+    public Vector3 initalScale;
+    public Boolean ismousecollider;
     private void Awake()
     {
 
@@ -30,19 +38,51 @@ public class concreteFactory : MonoBehaviour
 
     private void Start()
     {
+        initalPos = transform.position;
+        initalScale = transform.localScale;
+        ismousecollider = false;
         rend = GetComponent<Renderer>();
         originalColor = rend.material.color;
         StartCoroutine(Manufacturing());
     }
-    private void Update()
+    private void FixedUpdate()
     {
+        AddPeople();
+        if (stoneface != null)
+        {
+            if (stoneface.activeSelf == true)
+            {
+                ST = GameObject.Find("StoneFace").GetComponent<StoneFaceMoveEat>();
+            }
+        }
         //Debug.Log("Concrete: "+manager.currentConcreteCount);
         if (currentHealth <= 0)
         {
+            ST.facilitiesList.Remove(this.gameObject);
             Instantiate(destroyEffectPrefab, transform.position, Quaternion.Euler(-90, 0, 0));
             Destroy(gameObject);
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.tag == "StoneFace")
+        {
+            stoneface = collision.gameObject;
+        }
+        if (collision.transform.tag == "Incarnation")
+        {
+            ismousecollider = true;
+        }
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.transform.tag == "Incarnation")
+        {
+            ismousecollider = false;
+        }
+    }
+
 
     public IEnumerator Manufacturing()
     {
@@ -69,11 +109,25 @@ public class concreteFactory : MonoBehaviour
 
     public void AddPeople()
     {
-        if (currentPeople < maxOccupacy)
+        if (Input.GetMouseButtonDown(1))
         {
-            currentPeople++;
-            GameManager.gameManager.currentPeopleCount--;
+            if (ismousecollider)
+            {
+                if (currentPeople < maxOccupacy)
+                {
+                    if (GameManager.gameManager.currentPeopleCount>0)
+                    {
+                        currentPeople++;
+                        GameManager.gameManager.currentPeopleCount--;
+                        transform.DOShakePosition(0.15f, 0.15f, 40).OnComplete(() => transform.position = initalPos);
+                        transform.DOShakeScale(0.15f, 0.3f, 30).OnComplete(() => transform.localScale = initalScale);
+                    }
+                    
+                }
+            }
+            
         }
+        
     }
 
     private IEnumerator FlashToRedAndBack()

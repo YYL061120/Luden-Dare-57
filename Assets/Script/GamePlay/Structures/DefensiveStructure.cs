@@ -11,7 +11,7 @@ public class DefensiveStructure : MonoBehaviour
     public float maxHealth;
     public float currentHealth;
 
-        public float flashDuration = 0.5f;
+     public float flashDuration = 0.5f;
     public float fadeDuration = 1.0f;
 
     private Renderer rend;
@@ -21,6 +21,7 @@ public class DefensiveStructure : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        healthBar.gameObject.SetActive(false);
         currentHealth = maxHealth;
         stoneface = GameObject.FindGameObjectWithTag("StoneFace");
         healthBar.SetHealth(currentHealth);
@@ -67,6 +68,7 @@ public class DefensiveStructure : MonoBehaviour
     private IEnumerator FlashThenFade()
     {
         // Step 1: 立即变成红色
+        healthBar.gameObject.SetActive(true);
         rend.material.color = Color.red;
 
         // Step 2: 保持一段时间
