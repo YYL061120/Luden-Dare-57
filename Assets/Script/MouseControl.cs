@@ -19,11 +19,13 @@ public class MouseControl : MonoBehaviour
     private float targetY;
     private float velocityY = 0f;
 
-
+    private Vector3 initialSize = new Vector3(1, 1, 1);
+    private Vector3 clickSize = new Vector3(0.75f, 0.75f, 0.75f);
 
 
     void Start()
     {
+        transform.localScale = initialSize;
         mouseControl = this;
         mainCamera = Camera.main;
         Cursor.visible = false;
@@ -40,6 +42,14 @@ public class MouseControl : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = false;
+        }
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            transform.localScale = clickSize;
+        }
+        if (Input.GetKeyUp(KeyCode.Mouse0))
+        {
+            transform.localScale = initialSize;
         }
     }
 

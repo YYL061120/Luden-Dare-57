@@ -646,6 +646,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 68.27, y: 5.47, z: -35.595}
+--- !u!1 &802367372
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 802367373}
+  m_Layer: 5
+  m_Name: SelectedFunction
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &802367373
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802367372}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1384655586}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &943177282
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1375,7 +1410,7 @@ MonoBehaviour:
   currentIronCount: 0
   currentConcreteCount: 0
   currentPeopleCount: 0
-  initialIronCount: 200
+  initialIronCount: 5000
   initialConcreteCount: 0
   initialPeopleCount: 0
 --- !u!1 &1064067438
@@ -1397,7 +1432,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1064067439
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1454,7 +1489,7 @@ MonoBehaviour:
   source: {fileID: 1064067441}
   dialogueCount: 0
   ck1: 4
-  ck2: 6
+  ck2: 5
   dialogues:
   - {fileID: 1064067438}
 --- !u!82 &1064067441
@@ -1700,8 +1735,8 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   uiManager: {fileID: 0}
   people: {fileID: 968230307}
-  concrete: {fileID: 999482681}
-  iron: {fileID: 1152316024}
+  concrete: {fileID: 1152316024}
+  iron: {fileID: 999482681}
   currentSceneName: 
   CreditPage: {fileID: 0}
 --- !u!1 &1152316024
@@ -2081,6 +2116,7 @@ RectTransform:
   - {fileID: 1260546185}
   - {fileID: 1064067439}
   - {fileID: 631939596}
+  - {fileID: 802367373}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2551,7 +2587,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 243
   scrollSensitivity: 10
-  smoothTime: 0.2
+  smoothTime: 0.1
   minY: 2
   maxY: 8
 --- !u!4 &1820861291
@@ -2633,13 +2669,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amountofBoost: 1.2
-  interactionMode: 0
+  interactionMode: 2
   HumanRoom: {fileID: 3532765311178927575, guid: f46f4cc20d1edb649a1864cb0e88f954, type: 3}
   IronRoom: {fileID: 313079420444739295, guid: 94d592b345baf924eb88bf98c792fb97, type: 3}
   ConcreteRoom: {fileID: 7368724747293671093, guid: 2a9e7ae193f7b524497846d9f3fc5643, type: 3}
   HumanRSp: {fileID: 21300000, guid: 9af6fa1d4e4254d47adf4fd69cd31f15, type: 3}
   IronRSp: {fileID: 21300000, guid: fb67dc39877ada243b8a2f3962786dab, type: 3}
-  ConcreteRSp: {fileID: 21300000, guid: 9a65ae851e096b449aafa49cc9d24837, type: 3}
+  ConcreteRSp: {fileID: 21300000, guid: be53e8c8e08b3964d95ffaa071c3cd5d, type: 3}
+  BoostingSp: {fileID: 21300000, guid: 4fd9208fef68b2a49bd25a759474a79e, type: 3}
   StatesRenderer: {fileID: 371285370}
 --- !u!1 &1834852253
 GameObject:
@@ -3108,7 +3145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7669325196836316908, guid: 39a073294fd93d548b423b87f1f1bd56, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

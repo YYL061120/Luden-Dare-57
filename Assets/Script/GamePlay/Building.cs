@@ -60,7 +60,7 @@ public class Building : MonoBehaviour
                         if (Input.GetKeyDown(KeyCode.Mouse0)|| Input.GetKeyUp(KeyCode.Mouse0))
                         {
                             CurrentConstructCD += buildInteraction.buildInt.amountofBoost;
-                            transform.DOShakePosition(0.15f,0.25f,25).OnComplete(() => transform.position=initalpos);
+                            transform.DOShakePosition(0.15f,0.15f,40).OnComplete(() => transform.position=initalpos);
                             transform.DOShakeScale(0.15f,0.3f,30).OnComplete(() => transform.localScale = initialScale);
 
                         }

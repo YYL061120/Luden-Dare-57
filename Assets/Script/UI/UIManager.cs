@@ -58,7 +58,7 @@ public class UIManager : MonoBehaviour
 
     public void UpdateDisplayingUI()
     {
-        peopleText.text = GameManager.gameManager.currentIronCount.ToString();
+        peopleText.text = GameManager.gameManager.currentPeopleCount.ToString();
         concreteText.text = GameManager.gameManager.currentConcreteCount.ToString();
         ironText.text = GameManager.gameManager.currentIronCount.ToString() ;
     }
