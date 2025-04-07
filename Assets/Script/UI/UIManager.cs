@@ -24,7 +24,7 @@ public class UIManager : MonoBehaviour
     private void Awake()
     {
         currentSceneName = SceneManager.GetActiveScene().name;
-        if(currentSceneName == "Gameplay")
+        if(currentSceneName == "entering" ||currentSceneName == "Gameplay")
         {
             peopleText = people.GetComponent<TextMeshProUGUI>();
             concreteText = concrete.GetComponent<TextMeshProUGUI>();
@@ -39,7 +39,7 @@ public class UIManager : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Gameplay");
+        SceneManager.LoadScene("Comic");
         uiManager = this;
     }
 
