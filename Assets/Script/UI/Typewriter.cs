@@ -27,9 +27,13 @@ public class TypeWriterTest : MonoBehaviour
     public int cke;
     public List<GameObject> dialogues = new List<GameObject>();
 
+    private BoxCollider mouse;
+
     void Start()
     {
         textMeshPro = GetComponent<TextMeshProUGUI>();
+        mouse = GameObject.Find("ThePlayerReincarnation").GetComponent<BoxCollider>();
+        mouse.enabled = false;
         tyt = this;
     }
 
@@ -82,6 +86,7 @@ public class TypeWriterTest : MonoBehaviour
         {
             text.SetActive(false);
             conti.SetActive(true);
+            mouse.enabled = true;
         }
         isTyping = false;
     }
