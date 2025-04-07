@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,6 +7,9 @@ using UnityEngine;
 
 public class Building : MonoBehaviour
 {
+    private Vector3 initialScale;
+    private Vector3 initalpos;
+
     public healthBar healthBar;
     public GameObject able;
     public GameObject notAble;
@@ -24,7 +28,8 @@ public class Building : MonoBehaviour
     private int FutureBuildingType;
     void Start()
     {
-        //GameManager.gameManager.currentIronCount;
+        initialScale = transform.localScale;
+        initalpos = transform.position;
         constructing = false;
         CurrentConstructCD = 0;
         FutureBuildingType = 0;
@@ -55,6 +60,9 @@ public class Building : MonoBehaviour
                         if (Input.GetKeyDown(KeyCode.Mouse0)|| Input.GetKeyUp(KeyCode.Mouse0))
                         {
                             CurrentConstructCD += buildInteraction.buildInt.amountofBoost;
+                            transform.DOShakePosition(0.15f,0.25f,25).OnComplete(() => transform.position=initalpos);
+                            transform.DOShakeScale(0.15f,0.3f,30).OnComplete(() => transform.localScale = initialScale);
+
                         }
                     }
                     break;
@@ -163,17 +171,17 @@ public class Building : MonoBehaviour
             switch (FutureBuildingType)
             {
                 case 1:
-                    Instantiate(HumanRoom, this.transform.position, Quaternion.identity);
+                    Instantiate(HumanRoom, initalpos, Quaternion.identity);
                     
                     Destroy(this.gameObject);
                     break;
                 case 2:
-                    Instantiate(IronRoom, this.transform.position, Quaternion.identity);
+                    Instantiate(IronRoom, initalpos, Quaternion.identity);
                     
                     Destroy(this.gameObject);
                     break;
                 case 3:
-                    Instantiate(ConcreteRoom, this.transform.position, Quaternion.identity);
+                    Instantiate(ConcreteRoom, initalpos, Quaternion.identity);
                     
                     Destroy(this.gameObject);
                     break;
