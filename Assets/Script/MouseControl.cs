@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
@@ -24,7 +25,7 @@ public class MouseControl : MonoBehaviour
     private Vector3 clickSize = new Vector3(0.75f, 0.75f, 0.75f);
     private Vector3 ppSize = new Vector3(1.55f, 1.55f, 1.55f);
 
-
+    public TextMeshProUGUI PopInroom;
     void Start()
     {
         transform.localScale = initialSize;

@@ -58,8 +58,21 @@ public class UIManager : MonoBehaviour
 
     public void UpdateDisplayingUI()
     {
-        peopleText.text = GameManager.gameManager.currentPeopleCount.ToString();
-        concreteText.text = GameManager.gameManager.currentConcreteCount.ToString();
-        ironText.text = GameManager.gameManager.currentIronCount.ToString() ;
+        if (peopleText != null)
+        {
+            peopleText.text = "Popolation :" + GameManager.gameManager.currentPeopleCount.ToString();
+
+        }
+        if (concreteText != null)
+        {
+            concreteText.text = "Concrete :"+GameManager.gameManager.currentConcreteCount.ToString();
+        }
+        if (ironText != null)
+        {
+            ironText.text = "Iron :" + GameManager.gameManager.currentIronCount.ToString();
+        }
+
+       
+        
     }
 }
