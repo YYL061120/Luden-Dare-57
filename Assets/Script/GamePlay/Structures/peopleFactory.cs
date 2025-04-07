@@ -43,9 +43,14 @@ public class peopleFactory : MonoBehaviour
         StartCoroutine(Manufacturing());
         currentHealth = maxHealth;
     }
-    private void FixedUpdate()
+
+    private void Update()
     {
         AddPeople();
+    }
+    private void FixedUpdate()
+    {
+        
         if (stoneface != null)
         {
             if (stoneface.activeSelf == true)

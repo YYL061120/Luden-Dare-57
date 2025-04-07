@@ -9,6 +9,7 @@ public class MouseControl : MonoBehaviour
     public float smoothSpeed = 5f;
     private Camera mainCamera;
     public LayerMask raycastLayerMask;
+    public GameObject PeopleSprite;
 
     [Header("Scroll")]
 
@@ -21,6 +22,7 @@ public class MouseControl : MonoBehaviour
 
     private Vector3 initialSize = new Vector3(1, 1, 1);
     private Vector3 clickSize = new Vector3(0.75f, 0.75f, 0.75f);
+    private Vector3 ppSize = new Vector3(1.55f, 1.55f, 1.55f);
 
 
     void Start()
@@ -47,11 +49,30 @@ public class MouseControl : MonoBehaviour
         {
             transform.localScale = clickSize;
         }
+        else if(Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            transform.localScale = ppSize;
+            GeneratePP();
+        }
         if (Input.GetKeyUp(KeyCode.Mouse0))
         {
             transform.localScale = initialSize;
         }
+        else if (Input.GetKeyUp(KeyCode.Mouse1))
+        {
+            transform.localScale = initialSize;
+        }
     }
+    public void GeneratePP()
+    {
+        if (PeopleSprite != null)
+        {
+            GameObject pp = Instantiate(PeopleSprite, transform.position, Quaternion.Euler(0f, 35f, 0f));
+            pp.GetComponent<Rigidbody>().AddForce(Vector3.up*80f,ForceMode.Impulse);
+            Destroy(pp, 1.2f);
+        }
+    }
+
 
     Vector3 GetMouseWorldPoint()
     {

@@ -1805,6 +1805,7 @@ MonoBehaviour:
   raycastLayerMask:
     serializedVersion: 2
     m_Bits: 755
+  PeopleSprite: {fileID: 2151547698131581977, guid: 63c74d48e5195564cab6c77be806d717, type: 3}
   scrollSensitivity: 10
   smoothTime: 0.1
   minY: 2
@@ -1896,6 +1897,8 @@ MonoBehaviour:
   IronRSp: {fileID: 21300000, guid: fb67dc39877ada243b8a2f3962786dab, type: 3}
   ConcreteRSp: {fileID: 21300000, guid: be53e8c8e08b3964d95ffaa071c3cd5d, type: 3}
   BoostingSp: {fileID: 21300000, guid: 4fd9208fef68b2a49bd25a759474a79e, type: 3}
+  DrillSp: {fileID: 21300000, guid: 98cad64a645dd7b4ab5fd779b82ac325, type: 3}
+  ConBlockSp: {fileID: 21300000, guid: 0bad3ed7cf68d1a4e9c7f52d8913b9d8, type: 3}
   StatesRenderer: {fileID: 371285370}
 --- !u!1 &1834852253
 GameObject:
@@ -1943,10 +1946,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
-  audioSource: {fileID: 0}
-  pScreamingOne: {fileID: 0}
-  pScreamingTwo: {fileID: 0}
-  pScreamingThree: {fileID: 0}
+  audioSource: {fileID: 1834852256}
+  pScreamingOne: {fileID: 8300000, guid: aaa2f4dbc735b144a993594950901a6a, type: 3}
+  pScreamingTwo: {fileID: 8300000, guid: 56e6e7954496c8a45906dc434c116d8d, type: 3}
+  pScreamingThree: {fileID: 8300000, guid: d799d353bb3ce794b9f13ed1a83ae360, type: 3}
 --- !u!82 &1834852256
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1960,7 +1963,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.765
   m_Pitch: 1
   Loop: 0
   Mute: 0

@@ -69,7 +69,6 @@ public class excavedElimination : MonoBehaviour
                 {
                     if (childrenWithTag[i].GetComponent<Building>().constructing)
                     {
-                        print(childrenWithTag[i].GetComponent<Building>().constructing);
                         FloorAccesbility = false;
                     }
                 }
