@@ -337,7 +337,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UnexcavedFloors: {fileID: 0}
   theList: []
-  TheYAxis: 0
+  TheRealyYAxis: 0
+  maxnumberofUnexcaved: 0
+  CameAmountDown: 0
+  wall1: {fileID: 0}
+  wall2: {fileID: 0}
+  wallNextYpos: 0
+  numbeforeWalls: 3
 --- !u!4 &362349542
 Transform:
   m_ObjectHideFlags: 0
@@ -520,7 +526,7 @@ GameObject:
   - component: {fileID: 631939596}
   - component: {fileID: 631939597}
   m_Layer: 5
-  m_Name: GameObject
+  m_Name: ResourcesUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -538,9 +544,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 968230308}
   - {fileID: 999482682}
   - {fileID: 1152316025}
+  - {fileID: 968230308}
   m_Father: {fileID: 1384655586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
@@ -1623,8 +1629,8 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   uiManager: {fileID: 0}
   people: {fileID: 968230307}
-  concrete: {fileID: 999482681}
-  iron: {fileID: 1152316024}
+  concrete: {fileID: 1152316024}
+  iron: {fileID: 999482681}
   currentSceneName: 
   CreditPage: {fileID: 0}
 --- !u!1 &1152316024
