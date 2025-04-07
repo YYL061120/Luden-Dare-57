@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class peopleFactory : MonoBehaviour
 {
+    public GameObject PeopleOnTheRoom;
+
     public GameObject hitEffectPrefab;
     public GameObject destroyEffectPrefab;
     public bool canManufacture;
@@ -78,6 +80,14 @@ public class peopleFactory : MonoBehaviour
             ismousecollider = true;
         }
     }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.transform.tag == "Incarnation")
+        {
+            ismousecollider = true;
+        }
+    }
     private void OnCollisionExit(Collision collision)
     {
         if (collision.transform.tag == "Incarnation")
@@ -132,6 +142,7 @@ public class peopleFactory : MonoBehaviour
                     {
                         currentPeople++;
                         GameManager.gameManager.currentPeopleCount--;
+                        Instantiate(PeopleOnTheRoom, new Vector3(transform.position.x + UnityEngine.Random.RandomRange(-0.15f, 0.15f), transform.position.y + UnityEngine.Random.RandomRange(-0.15f, 0.15f), transform.position.z + UnityEngine.Random.RandomRange(-0.15f, 0.15f)), Quaternion.Euler(15, 30, 0), transform);
                         transform.DOShakePosition(0.15f, 0.15f, 40).OnComplete(() => transform.position = initalPos);
                         transform.DOShakeScale(0.15f, 0.3f, 30).OnComplete(() => transform.localScale = initalScale);
                     }

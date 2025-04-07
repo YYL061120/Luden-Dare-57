@@ -710,6 +710,7 @@ MonoBehaviour:
   NotAble: {fileID: 5454071394026597259}
   Underconstruction: {fileID: 8416559786866001768}
   constructionState: 0
+  FloorAccesbility: 0
   interacting: 0
   constructing: 0
   childrenWithTag: []
@@ -717,7 +718,6 @@ MonoBehaviour:
   Defender: {fileID: 9025740067739263504, guid: 5b5579c4718de98498ef0853a038ddbb, type: 3}
   DefualtConstructCD: 35
   CurrentConstructCD: 0
-  Boostamount: 1
 --- !u!1 &1785895799123681274
 GameObject:
   m_ObjectHideFlags: 0
@@ -1252,7 +1252,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d32ac8eafd8073e4d9e6fc861f91f818, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1883,7 +1883,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d32ac8eafd8073e4d9e6fc861f91f818, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2051,7 +2051,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d32ac8eafd8073e4d9e6fc861f91f818, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2653,7 +2653,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d32ac8eafd8073e4d9e6fc861f91f818, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

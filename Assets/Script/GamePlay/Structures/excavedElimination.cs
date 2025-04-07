@@ -46,7 +46,12 @@ public class excavedElimination : MonoBehaviour
         }
     }
 
-        void FixedUpdate()
+    private void Update()
+    {
+        THefunction();
+    }
+
+    void FixedUpdate()
     {
         ConstructConcrete();
         indicatorUpdate();
@@ -78,16 +83,7 @@ public class excavedElimination : MonoBehaviour
             switch (buildInteraction.buildInt.interactionMode)
             {
                 case 0:
-                    if (Input.GetKeyDown(KeyCode.Mouse0)|| Input.GetKeyUp(KeyCode.Mouse0))
-                    {
-                        if (constructing)
-                        {
-
-                            CurrentConstructCD += buildInteraction.buildInt.amountofBoost;
-                            transform.DOShakePosition(0.15f, 0.15f, 40).OnComplete(() => transform.position = initalpos);
-                            transform.DOShakeScale(0.15f, 0.3f, 30).OnComplete(() => transform.localScale = initialScale);
-                        }
-                    }
+                    
                     break;
 
                 case 4:
@@ -108,6 +104,26 @@ public class excavedElimination : MonoBehaviour
                         }
                     }
                     break;
+            }
+        }
+    }
+
+    public void THefunction() 
+    {
+        if(interacting)
+        {
+            if (constructing)
+            {
+                if (Input.GetKeyDown(KeyCode.Mouse0))
+                {
+                    if (buildInteraction.buildInt.interactionMode == 0)
+                    {
+                        CurrentConstructCD += buildInteraction.buildInt.amountofBoost;
+                        transform.DOShakePosition(0.15f, 0.15f, 40).OnComplete(() => transform.position = initalpos);
+                        transform.DOShakeScale(0.15f, 0.3f, 30).OnComplete(() => transform.localScale = initialScale);
+                    }
+
+                }
             }
         }
     }
