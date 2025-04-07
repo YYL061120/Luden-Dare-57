@@ -15,6 +15,7 @@ public class excavedElimination : MonoBehaviour
     public GameObject Underconstruction;
 
     public Boolean constructionState;
+    public Boolean FloorAccesbility;
     public Boolean interacting;
     public Boolean constructing;
 
@@ -29,6 +30,7 @@ public class excavedElimination : MonoBehaviour
     public float CurrentConstructCD;
     void Start()
     {
+        FloorAccesbility = true;
         initalpos = this.transform.position;
         initialScale = this.transform.localScale;
 
@@ -61,6 +63,18 @@ public class excavedElimination : MonoBehaviour
 
         if (other.gameObject.tag == "Incarnation")
         {
+            for (int i = 0; i < childrenWithTag.Count; i++)
+            {
+                if (childrenWithTag[i] != null)
+                {
+                    if (childrenWithTag[i].GetComponent<Building>().constructing)
+                    {
+                        print(childrenWithTag[i].GetComponent<Building>().constructing);
+                        FloorAccesbility = false;
+                    }
+                }
+
+            }
             interacting = true;
             switch (buildInteraction.buildInt.interactionMode)
             {
@@ -81,19 +95,8 @@ public class excavedElimination : MonoBehaviour
                     constructionState = (GameManager.gameManager.currentIronCount >= 100 && GameManager.gameManager.currentConcreteCount >= 100);
                     if (Input.GetKey(KeyCode.Mouse0))
                     {
-                        if (constructionState)
+                        if (constructionState&& FloorAccesbility)
                         {
-                            for (int i = 0; i < childrenWithTag.Count; i++)
-                            {
-                                if (childrenWithTag[i] != null)
-                                {
-                                    if (childrenWithTag[i].GetComponent<Building>().constructing)
-                                    {
-                                        break;
-                                    }
-                                }
-                                
-                            }
                             constructing = true;
                             GameManager.gameManager.currentIronCount -= 100;
                             GameManager.gameManager.currentConcreteCount -= 100;
@@ -140,6 +143,10 @@ public class excavedElimination : MonoBehaviour
 
     public void indicatorUpdate()
     {
+        if (!FloorAccesbility)
+        {
+            constructionState = false;
+        }
         if (interacting)
         {
             if(buildInteraction.buildInt.interactionMode==4)
