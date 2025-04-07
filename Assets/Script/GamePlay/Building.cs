@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,6 +7,9 @@ using UnityEngine;
 
 public class Building : MonoBehaviour
 {
+    private Vector3 initialScale;
+    private Vector3 initalpos;
+
     public healthBar healthBar;
     public GameObject able;
     public GameObject notAble;
@@ -24,7 +28,8 @@ public class Building : MonoBehaviour
     private int FutureBuildingType;
     void Start()
     {
-        //GameManager.gameManager.currentIronCount;
+        initialScale = transform.localScale;
+        initalpos = transform.position;
         constructing = false;
         CurrentConstructCD = 0;
         FutureBuildingType = 0;
@@ -52,9 +57,12 @@ public class Building : MonoBehaviour
                 case 0:
                     if (constructing)
                     {
-                        if (Input.GetKeyDown(KeyCode.Mouse0))
+                        if (Input.GetKeyDown(KeyCode.Mouse0)|| Input.GetKeyUp(KeyCode.Mouse0))
                         {
                             CurrentConstructCD += buildInteraction.buildInt.amountofBoost;
+                            transform.DOShakePosition(0.15f,0.25f,25).OnComplete(() => transform.position=initalpos);
+                            transform.DOShakeScale(0.15f,0.3f,30).OnComplete(() => transform.localScale = initialScale);
+
                         }
                     }
                     break;
@@ -64,7 +72,7 @@ public class Building : MonoBehaviour
                     {
                         if (constructionState&&!constructing)
                         {
-                            
+                            GameManager.gameManager.currentIronCount -= 75;
                             FutureBuildingType = 1;
                             constructing = true;
                         }
@@ -76,6 +84,7 @@ public class Building : MonoBehaviour
                     {
                         if (constructionState && !constructing)
                         {
+                            GameManager.gameManager.currentIronCount -= 50;
                             FutureBuildingType = 2;
                             constructing = true;
                         }
@@ -87,6 +96,7 @@ public class Building : MonoBehaviour
                     {
                         if (constructionState && !constructing)
                         {
+                            GameManager.gameManager.currentIronCount -= 30;
                             FutureBuildingType = 3;
                             constructing = true;
                         }
@@ -109,7 +119,9 @@ public class Building : MonoBehaviour
     {
         if (collision.transform.tag == "Incarnation")
         {
-            interacting = false;
+                interacting = false;
+            
+            
         }
     }
 
@@ -117,6 +129,7 @@ public class Building : MonoBehaviour
     {
         if (interacting)
         {
+            
             if (!constructing)
             {
                 able.SetActive(constructionState);
@@ -124,11 +137,14 @@ public class Building : MonoBehaviour
             }
             else
             {
+                interacting = false;
                 healthBar.gameObject.SetActive(true);
-                able.SetActive(!constructionState);
-                notAble.SetActive(!constructionState);
-                progressing.SetActive(constructionState);
+                able.SetActive(false);
+                notAble.SetActive(false);
+                progressing.SetActive(true);
             }
+                
+            
             
         }
         else
@@ -155,18 +171,18 @@ public class Building : MonoBehaviour
             switch (FutureBuildingType)
             {
                 case 1:
-                    Instantiate(HumanRoom, this.transform.position, Quaternion.identity);
-                    GameManager.gameManager.currentIronCount -= 75;
+                    Instantiate(HumanRoom, initalpos, Quaternion.identity);
+                    
                     Destroy(this.gameObject);
                     break;
                 case 2:
-                    Instantiate(IronRoom, this.transform.position, Quaternion.identity);
-                    GameManager.gameManager.currentIronCount -= 50;
+                    Instantiate(IronRoom, initalpos, Quaternion.identity);
+                    
                     Destroy(this.gameObject);
                     break;
                 case 3:
-                    Instantiate(ConcreteRoom, this.transform.position, Quaternion.identity);
-                    GameManager.gameManager.currentIronCount -= 30;
+                    Instantiate(ConcreteRoom, initalpos, Quaternion.identity);
+                    
                     Destroy(this.gameObject);
                     break;
 

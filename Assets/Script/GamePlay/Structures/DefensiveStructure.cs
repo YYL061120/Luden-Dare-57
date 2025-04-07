@@ -6,6 +6,7 @@ public class DefensiveStructure : MonoBehaviour
 {
     public GameObject hitEffectPrefab;
     public GameObject destroyEffectPrefab;
+    public GameObject stoneface;
     public float maxHealth;
     public float currentHealth;
 
@@ -21,12 +22,15 @@ public class DefensiveStructure : MonoBehaviour
     {
         rend = GetComponent<Renderer>();
         originalColor = rend.material.color;
-        ST = GameObject.Find("StoneFace").GetComponent<StoneFaceMoveEat>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (stoneface.activeSelf == true)
+        {
+            ST = GameObject.Find("StoneFace").GetComponent<StoneFaceMoveEat>();
+        }
         if (currentHealth <= 0)
         {
             ST.facilitiesList.Remove(gameObject);
