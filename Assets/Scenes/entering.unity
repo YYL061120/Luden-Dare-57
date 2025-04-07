@@ -1852,27 +1852,19 @@ MonoBehaviour:
   typingSpeed: 0.05
   sentencesOne:
   - Nice day my dude, as long as u don't look for those damned Mo'ai stone dickerheads....
-  - Certainly! Now our shelters are concrete, so worry not!
-  - Wait... Did u hear that sound?
-  - Wha...
+  - Indeed, but wha was  that sound?
   - Bloody hell! We must get our diggers workin now!
-  - It's not save to climb up, our only shoice is to dig down!
-  - All the people! Let's start to work! Produce materials and dig down, escape from
-    the stoneheads!
-  - Bruh I must remind u, as our diggers start working, we'll demand more supports,
-    more people and heat-resistant materials, we called it HRM....
-  - Sure, but, why?
-  - Mo'ai stoneheads are heavy, as they start chasing us, they will accelerate and
-    catch us up. To support our temperary base, we must adopt more materials and
-    work harder! Remember, your ultimate goal is to protect those WORKERS on the
-    top, not to protect us!
+  - And remember, as our diggers start working, we'll demand more supports, more
+    people and heat-resistant materials, we called it HRM....
+  - You need to provide us materials to keep working, and build defensive sturctures
+    to block the stoneheads!
   currentSentenceIndex: 0
   typingSound: {fileID: 0}
   source: {fileID: 1064067441}
   dialogueCount: 0
-  ck1: 4
-  ck2: 6
-  cke: 10
+  ck1: 2
+  ck2: 3
+  cke: 5
   dialogues:
   - {fileID: 1064067438}
 --- !u!82 &1064067441
@@ -2116,7 +2108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
-  uiManager: {fileID: 0}
+  uiManager: {fileID: 1135518418}
   people: {fileID: 968230307}
   concrete: {fileID: 1152316024}
   iron: {fileID: 999482681}
@@ -3086,7 +3078,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1820861290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3142,7 +3134,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.25, y: 0.25, z: 0.25}
   m_Center: {x: 0, y: 0, z: 0}
