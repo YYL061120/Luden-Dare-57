@@ -54,7 +54,7 @@ public class ComicManager : MonoBehaviour
                 StartCoroutine(FadeInOut(hasFadeIn));
                 hasFadeIn = true ;
             }
-            else
+            else if(hasFadeIn == false) 
             {
                 comicSprite.sprite = comics[currentSentenceIndex];
                 ShowNextSentence();
