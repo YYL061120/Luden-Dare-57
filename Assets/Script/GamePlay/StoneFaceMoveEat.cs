@@ -139,10 +139,6 @@ public class StoneFaceMoveEat : MonoBehaviour
         isDealingDamage = false;
     }
 
-    public void MovingSpeedChanger()
-    {
-        //float time = GameManager.gameManager.playingDuration;
-    }
 
     private IEnumerator PlayBiteCoroutine()
     {
@@ -161,9 +157,13 @@ public class StoneFaceMoveEat : MonoBehaviour
 
     public void HumanRemains()
     {
-        if (GameManager.gameManager.currentPeopleCount <= 0 &&!lastHopeCheck.LastHopeCheck.isthereHope)
+        if(GameManager.gameManager!=null&& lastHopeCheck.LastHopeCheck != null)
         {
-            changescreen.Changescreen.changeSceneToDefeat();
+            if (GameManager.gameManager.currentPeopleCount <= 0 && !lastHopeCheck.LastHopeCheck.isthereHope)
+            {
+                changescreen.Changescreen.changeSceneToDefeat();
+            }
         }
+        
     }
 }
