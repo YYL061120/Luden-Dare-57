@@ -32,24 +32,34 @@ public class UIManager : MonoBehaviour
     private void Awake()
     {
         currentSceneName = SceneManager.GetActiveScene().name;
-        Tutorial = GameObject.Find("Tutorial");
-        Tutorial.SetActive(false);
-        if (currentSceneName == "Entering" ||currentSceneName == "Gameplay")
+        if (currentSceneName != "Defeat")
         {
-            peopleText = people.GetComponent<TextMeshProUGUI>();
-            concreteText = concrete.GetComponent<TextMeshProUGUI>();
-            ironText = iron.GetComponent<TextMeshProUGUI>();
+            Tutorial = GameObject.Find("Tutorial");
+            Tutorial.SetActive(false);
+            if (currentSceneName == "Entering" || currentSceneName == "Gameplay")
+            {
+                peopleText = people.GetComponent<TextMeshProUGUI>();
+                concreteText = concrete.GetComponent<TextMeshProUGUI>();
+                ironText = iron.GetComponent<TextMeshProUGUI>();
+            }
+        }
+        else
+        {
+
         }
     }
 
     private void FixedUpdate()
     {
-        tutorialPageIndex = Mathf.Clamp(tutorialPageIndex, 0, tutorialPages.Count-1);
-        for(int i = 0; i < tutorialPages.Count; i++)
+        if(currentSceneName != "Defeat")
         {
-            if(i!=tutorialPageIndex)    tutorialPages[i].gameObject.SetActive(false);
+            tutorialPageIndex = Mathf.Clamp(tutorialPageIndex, 0, tutorialPages.Count - 1);
+            for (int i = 0; i < tutorialPages.Count; i++)
+            {
+                if (i != tutorialPageIndex) tutorialPages[i].gameObject.SetActive(false);
+            }
+            tutorialPages[tutorialPageIndex].gameObject.SetActive(true);
         }
-        tutorialPages[tutorialPageIndex].gameObject.SetActive(true);
     }
 
     private void Update()
