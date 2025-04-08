@@ -42,7 +42,7 @@ public class StoneFaceMoveEat : MonoBehaviour
 
     private void FixedUpdate()
     {
-
+        Debug.Log("nb");
     }
     public void AdjustFacing()
     {
