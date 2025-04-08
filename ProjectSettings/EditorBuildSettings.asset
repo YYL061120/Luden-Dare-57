@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Comic.unity
     guid: 6220db6e7cb542c4abb1cae43b870924
   - enabled: 1
-    path: Assets/Scenes/entering.unity
+    path: Assets/Scenes/Entering.unity
     guid: 197b679e95dae844c9c0e337e1238439
   - enabled: 1
     path: Assets/Scenes/Gameplay.unity

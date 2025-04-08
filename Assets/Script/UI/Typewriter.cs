@@ -33,7 +33,6 @@ public class TypeWriterTest : MonoBehaviour
     {
         textMeshPro = GetComponent<TextMeshProUGUI>();
         mouse = GameObject.Find("ThePlayerReincarnation").GetComponent<BoxCollider>();
-        mouse.enabled = false;
         tyt = this;
     }
 
@@ -85,7 +84,6 @@ public class TypeWriterTest : MonoBehaviour
         {
             text.SetActive(false);
             conti.SetActive(true);
-            mouse.enabled = true;
         }
         isTyping = false;
     }
