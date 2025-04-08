@@ -103,7 +103,7 @@ public class concreteFactory : MonoBehaviour
 
     public IEnumerator Manufacturing()
     {
-        int efficiency = 20;
+        int efficiency = 6;
         while (true)
         {
             if (currentPeople > 0) canManufacture = true;

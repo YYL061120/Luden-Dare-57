@@ -14,10 +14,16 @@ public class StoneFaceMoveEat : MonoBehaviour
     public float damage;
     public float movingSpeed;
     public float eatingFrequency = 5f;
+    public Sprite[] Fs;
+    public int frame;
 
     public bool isMovingState = true;
     public bool isDealingDamage = false;
     private Coroutine eatDelayCoroutine;
+    public float NextFrameCD;
+    private float CurrentFCD;
+    public SpriteRenderer Face;
+    public bool isPlayingEating = false;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +39,10 @@ public class StoneFaceMoveEat : MonoBehaviour
         MovingOrEating();
     }
 
+    private void FixedUpdate()
+    {
+
+    }
     public void AdjustFacing()
     {
         // 获取物体与摄像机之间的方向
@@ -44,6 +54,7 @@ public class StoneFaceMoveEat : MonoBehaviour
         // 旋转物体，使其始终面向摄像机
         if (direction != Vector3.zero)
         {
+            
             Quaternion rotation = Quaternion.LookRotation(direction);
             transform.rotation = rotation;
         }
@@ -83,8 +94,8 @@ public class StoneFaceMoveEat : MonoBehaviour
     {
         while (!isMovingState)
         {
+            
             yield return new WaitForSeconds(eatingFrequency);
-
             foreach (GameObject facility in facilitiesList)
             {
                 if (facility == null) continue;
@@ -109,7 +120,15 @@ public class StoneFaceMoveEat : MonoBehaviour
                     facility.GetComponent<DefensiveStructure>().currentHealth -= damage;
                     facility.GetComponent<DefensiveStructure>().HealthDeduction();
                 }
+                damage += damage * 0.05f;
+                eatingFrequency *= 0.99f;
+
             }
+            if (isPlayingEating == false)
+            {
+                StartCoroutine(PlayBiteCoroutine());
+            }
+
         }
         isDealingDamage = false;
     }
@@ -117,5 +136,19 @@ public class StoneFaceMoveEat : MonoBehaviour
     public void MovingSpeedChanger()
     {
         //float time = GameManager.gameManager.playingDuration;
+    }
+
+    private IEnumerator PlayBiteCoroutine()
+    {
+        isPlayingEating = true;
+        int framesToShow = 4;
+
+        for (int frame = 0; frame < framesToShow; frame++)
+        {
+            Face.sprite = Fs[frame];
+            yield return new WaitForSeconds(NextFrameCD);
+        }
+        Face.sprite = Fs[0];
+        isPlayingEating = false;
     }
 }

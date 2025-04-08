@@ -393,7 +393,7 @@ MonoBehaviour:
   currentPeople: 0
   maxHealth: 25
   currentHealth: 25
-  currentEfficiency: 5
+  currentEfficiency: 10
   initalPos: {x: 0, y: 0, z: 0}
   initalScale: {x: 0, y: 0, z: 0}
   ismousecollider: 0
