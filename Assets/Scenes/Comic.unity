@@ -620,7 +620,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7b54ddc5940611b419513b3b9bffefb6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 531f87ff6ebd3db4c9533588e35fc117, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -640,8 +640,8 @@ Transform:
   m_GameObject: {fileID: 643195944}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 2.35, y: 5.33, z: 0.6}
-  m_LocalScale: {x: 0.1273245, y: 0.1273245, z: 0.1273245}
+  m_LocalPosition: {x: 2.2469, y: 5.4041, z: 0.6}
+  m_LocalScale: {x: 0.14066811, y: 0.1322187, z: 0.1273245}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -899,14 +899,14 @@ MonoBehaviour:
   two: {fileID: 1751588205}
   comicSprite: {fileID: 643195945}
   comics:
-  - {fileID: 21300000, guid: 7b54ddc5940611b419513b3b9bffefb6, type: 3}
-  - {fileID: 21300000, guid: 503c09b20d8b53543962d8ebc58d125c, type: 3}
-  - {fileID: 21300000, guid: 177b08963f70f9844a0a85cdeea96d9b, type: 3}
-  - {fileID: 21300000, guid: a5d57ef1eb34e324299db4fe58462f46, type: 3}
-  - {fileID: 21300000, guid: 28a3682d7ef686040bcb15b227a0e7a2, type: 3}
-  - {fileID: 21300000, guid: 28a3682d7ef686040bcb15b227a0e7a2, type: 3}
-  - {fileID: 21300000, guid: 28a3682d7ef686040bcb15b227a0e7a2, type: 3}
-  - {fileID: 21300000, guid: 28a3682d7ef686040bcb15b227a0e7a2, type: 3}
+  - {fileID: 21300000, guid: 531f87ff6ebd3db4c9533588e35fc117, type: 3}
+  - {fileID: 21300000, guid: ddfd3318732d01d42a3fd34cfb9a4ea1, type: 3}
+  - {fileID: 21300000, guid: 4347aa04d1b3f9444a763954c0a27678, type: 3}
+  - {fileID: 21300000, guid: d493ece7ee2658b4fa2200bc29e8d78d, type: 3}
+  - {fileID: 21300000, guid: c429281c97091794d9e7e20b5fdb1db7, type: 3}
+  - {fileID: 21300000, guid: 87f5fc215b3aefc47a9e260c0b4cbe96, type: 3}
+  - {fileID: 21300000, guid: d859a510b1844c644bea0ac4ae38cb72, type: 3}
+  - {fileID: 21300000, guid: dd4a8a62534ffac4b855debb763c5e1f, type: 3}
   hasFadeIn: 1
   fadeInOutDuration: 5
 --- !u!114 &693522602
