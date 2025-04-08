@@ -37,6 +37,7 @@ public class StoneFaceMoveEat : MonoBehaviour
     {
         AdjustFacing();
         MovingOrEating();
+        HumanRemains();
     }
 
     private void FixedUpdate()
@@ -67,7 +68,12 @@ public class StoneFaceMoveEat : MonoBehaviour
             isMovingState = false;
             facilitiesList.Add(collision.gameObject);
         }
-    }
+        if(collision.gameObject.tag == "TheDrill")
+        {
+            changescreen.Changescreen.changeSceneToDefeat();
+        }
+
+        }
     public void MovingOrEating()
     {
         if (isMovingState)
@@ -150,5 +156,14 @@ public class StoneFaceMoveEat : MonoBehaviour
         }
         Face.sprite = Fs[0];
         isPlayingEating = false;
+    }
+
+
+    public void HumanRemains()
+    {
+        if (GameManager.gameManager.currentPeopleCount <= 0 &&!lastHopeCheck.LastHopeCheck.isthereHope)
+        {
+            changescreen.Changescreen.changeSceneToDefeat();
+        }
     }
 }

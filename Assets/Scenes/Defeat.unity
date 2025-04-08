@@ -2065,6 +2065,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17609ec5a13eda04abef325b16524373, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Display: {fileID: 1084897199}
 --- !u!4 &1097643216
 Transform:
   m_ObjectHideFlags: 0
@@ -2134,6 +2135,9 @@ MonoBehaviour:
   Tutorial: {fileID: 0}
   tutorialPages: []
   tutorialPageIndex: 0
+  images: []
+  STa: {fileID: 0}
+  isPlaying: 0
 --- !u!1 &1152316024
 GameObject:
   m_ObjectHideFlags: 0
