@@ -98,7 +98,7 @@ public class peopleFactory : MonoBehaviour
 
     public IEnumerator Manufacturing()
     {
-        int efficiency = 60;
+        int efficiency = 11;
         while (true)
         {
             if (currentPeople > 0) canManufacture = true;
@@ -108,7 +108,7 @@ public class peopleFactory : MonoBehaviour
                 GameManager.gameManager.currentPeopleCount++;
                 PeoplePopOutEffect();   
             }
-            float waitingTime = efficiency - currentPeople * 3f; //formula: 60s/人（-3s/人）
+            float waitingTime = Mathf.Abs(efficiency - currentPeople); //formula: 60s/人（-3s/人）
             yield return new WaitForSeconds(waitingTime);
         }
 

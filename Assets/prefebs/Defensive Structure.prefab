@@ -772,7 +772,7 @@ MonoBehaviour:
   hitEffectPrefab: {fileID: 23150035726137254, guid: 0881f4a613aace04e82d022145424cca, type: 3}
   destroyEffectPrefab: {fileID: 8211956793553979857, guid: 3e3e14a2c28b71f4f8f7f5d28389370b, type: 3}
   stoneface: {fileID: 0}
-  maxHealth: 150
+  maxHealth: 500
   currentHealth: 50
   flashDuration: 0.5
   fadeDuration: 1
