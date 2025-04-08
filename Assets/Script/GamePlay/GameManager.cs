@@ -35,10 +35,16 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K) && TypeWriterTest.isTyping == false)
-        {
-            TypeWriterTest.tyt.AnotherDialogue();
-        }        
+
     }
 
+    public void Tutorial()
+    {
+        SceneManager.LoadScene("Entering");
+    }
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene("Comic");
+    }
 }
