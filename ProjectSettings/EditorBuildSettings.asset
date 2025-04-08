@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Comic.unity
     guid: 6220db6e7cb542c4abb1cae43b870924
   - enabled: 1
-    path: Assets/Scenes/Entering.unity
+    path: Assets/Scenes/entering.unity
     guid: 197b679e95dae844c9c0e337e1238439
   - enabled: 1
     path: Assets/Scenes/Gameplay.unity
@@ -20,5 +20,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ThanksTEST.unity
     guid: 800070bfc8d54b14686f019b79b4fa6a
+  - enabled: 1
+    path: Assets/Scenes/Defeat.unity
+    guid: 6ab49e2a32dd6ac4d925a1c4f96352fc
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
