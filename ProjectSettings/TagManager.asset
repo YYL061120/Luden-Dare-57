@@ -11,6 +11,7 @@ TagManager:
   - StoneFace
   - Facilities
   - Room
+  - LastHope
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - StoneFace
   - Facility
   - EntireExcavedFloor
-  - 
+  - LastHope
   - 
   - 
   - 

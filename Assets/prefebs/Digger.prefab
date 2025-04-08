@@ -359,8 +359,8 @@ MonoBehaviour:
   ListOfGif: []
   amplitude: 0.02
   frequency: 40
-  AmountOfResources: 100
-  AmountToIncrease: 50
+  AmountOfResources: 50
+  AmountToIncrease: 25
   Selected: 0
   Constructable: 0
   Able: {fileID: 4396157535776384394}
