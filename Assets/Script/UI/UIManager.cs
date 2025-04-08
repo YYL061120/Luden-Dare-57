@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using System.Security.Cryptography.X509Certificates;
+using System.Collections;
 public class UIManager : MonoBehaviour
 {
     public GameManager gameManager;
@@ -28,6 +29,11 @@ public class UIManager : MonoBehaviour
     public GameObject Tutorial;
     public List<GameObject> tutorialPages = new List<GameObject>();
     public int tutorialPageIndex = 0;
+
+    [Header("Startscreen")]
+    public List<Sprite> images = new List<Sprite>();
+    public Image STa;
+    public bool isPlaying = false;
 
     private void Awake()
     {
@@ -65,6 +71,10 @@ public class UIManager : MonoBehaviour
     private void Update()
     {
         Alternative();
+        if(currentSceneName == "Startscreen" && isPlaying == false)
+        {
+            StartCoroutine(STA());
+        }
     }
 
     private void LateUpdate()
@@ -143,5 +153,17 @@ public class UIManager : MonoBehaviour
         {
             NextPage();
         }
+    }
+
+    IEnumerator STA()
+    {
+        isPlaying = true;
+        for (int i = 0; i < images.Count; i++)
+        {
+            STa.sprite = images[i];
+            yield return new WaitForSeconds(0.1f);
+        }
+        STa.sprite = images[0];
+        isPlaying = false;
     }
 }
